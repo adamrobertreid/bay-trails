@@ -1,3 +1,5 @@
+angular.module('project_03', ['ng'])
+
 console.log("Sanity Check: JS is working!");
 
 $(document).ready(function(){

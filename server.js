@@ -23,7 +23,7 @@ var ejs = require('ejs');
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 
-var controllers = require('./controllers');
+// var controllers = require('./controllers');
 
 // routes ==================================================
 
@@ -45,8 +45,8 @@ app.get('*', function homepage (req, res) {
 
 // start app ===============================================
 // set our port
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 // startup our app at http://localhost:4000
 app.listen(port);
 // shoutout to the user
-console.log('Magic happens on http://localhost:4000/' + port);
+console.log('Magic happens on http://localhost:3000/' + port);

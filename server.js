@@ -1,22 +1,25 @@
 // server.js
 
-// modules ===================================
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+// modules & express ===================================
+var express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser'),
+    logger = require('morgan'),
+    auth = require('./middleware/auth'),
+    controllers = require("./controllers");
 
+// require and load dotenv
+require('dotenv').load();
 
 // configuration ===========================================
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
 app.use(bodyParser.json());
-
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // set the static files location /public/img will be /img for users
-app.use('/public',express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 // set 'html' as the engine, using ejs's renderFile function
 var ejs = require('ejs');

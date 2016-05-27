@@ -33,14 +33,14 @@ app.get('/', function homepage (req, res) {
 });
 
 //JSON API Endpoints
-require('./app/routes')(app); // configure our routes
+// require('./app/routes')(app); // configure our routes
 
 
 
 
 //catch all for anything
 app.get('*', function homepage (req, res) {
-  res.sendFile(__dirname + '/views/index.html');
+  res.sendFile(__dirname + './views/index.html');
 });
 
 // start app ===============================================
@@ -49,4 +49,4 @@ var port = process.env.PORT || 3000;
 // startup our app at http://localhost:4000
 app.listen(port);
 // shoutout to the user
-console.log('Magic happens on http://localhost:3000/' + port);
+console.log('Magic happens on http://localhost:' + port);

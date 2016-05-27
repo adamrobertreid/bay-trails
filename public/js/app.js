@@ -1,8 +1,29 @@
-angular.module('project_03', ['ng'])
-
+// CLIENT side js=======================
 console.log("Sanity Check: JS is working!");
 
-$(document).ready(function(){
+
+angular
+    .module('project_03', ['ngRoute'])
+    .config(config);
+
+config.$inject = ['$routeProvider', '$locationProvider'];
+
+function config ($routeProvider, $locationProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: '',
+      controllerAs: '',
+      controller: ''
+    })
+
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+  });
+}
+
+
+
 
 // Plugin for materialize ui
 var app = angular.module('materializeApp', ['ui.materialize'])
@@ -12,5 +33,3 @@ var app = angular.module('materializeApp', ['ui.materialize'])
             choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
         };
     }]);
-
-});

@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
+// log api requests
+app.use(logger('dev'));
+
 // set 'html' as the engine, using ejs's renderFile function
 var ejs = require('ejs');
 app.engine('html', ejs.renderFile);

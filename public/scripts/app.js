@@ -1,4 +1,6 @@
+console.log("Sanity Check: JS is working!");
 
+$(document).ready(function(){
 
 // Plugin for materialize ui
 var app = angular.module('materializeApp', ['ui.materialize'])
@@ -8,3 +10,5 @@ var app = angular.module('materializeApp', ['ui.materialize'])
             choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
         };
     }]);
+
+});

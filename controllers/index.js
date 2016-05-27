@@ -1,2 +1,4 @@
-module.exports.api = require('./apiController');
-module.exports.users = require('./usersController');
+module.exports = {
+  api: require('./apiController'),
+  users: require('./usersController')
+}

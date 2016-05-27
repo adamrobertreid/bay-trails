@@ -6,7 +6,7 @@ angular
     'ngRoute',
     'satellizer'
   ])
-  // .controller('MainController', MainController)
+  .controller('MainController', MainController)
   // .controller('PostsIndexController', PostsIndexController)
   // .controller('PostsNewController', PostsNewController)
   // .controller('PostsShowController', PostsShowController)

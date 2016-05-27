@@ -4,8 +4,10 @@
   "description": "Bay Trails",
   "main": "server.js",
   "dependencies": {
-    "bower": "^1.7.9",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "body-parser": "^1.14.1",
+    "ejs": "^2.4.1",
+    "mongoose": "^4.2.9"
   },
   "devDependencies": {},
   "scripts": {

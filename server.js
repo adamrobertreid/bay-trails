@@ -36,7 +36,12 @@ app.put('/api/me', auth.ensureAuthenticated, usersCtrl.updateCurrentUser);
 
 //JSON API Endpoints ======================================
 
-
+var trailsCtrl = controllers.trails;
+app.get('/api/trails', trailsCtrl.index);
+app.post('/api/trails', trailsCtrl.create);
+app.get('/api/trails/:id', trailsCtrl.show);
+app.put('/api/trails/:id', trailsCtrl.update);
+app.delete('/api/trails/:id', trailsCtrl.destroy);
 
 
 // CATCH All Route =========================================

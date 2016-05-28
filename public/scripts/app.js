@@ -7,9 +7,9 @@ angular
     'satellizer'
   ])
   .controller('MainController', MainController)
-  // .controller('PostsIndexController', PostsIndexController)
+  .controller('PostsIndexController', PostsIndexController)
   // .controller('PostsNewController', PostsNewController)
-  // .controller('PostsShowController', PostsShowController)
+  .controller('TrailsShowController', TrailsShowController)
   // .controller('PostsEditController', PostsEditController)
   .controller('LoginController', LoginController)
   .controller('SignupController', SignupController)

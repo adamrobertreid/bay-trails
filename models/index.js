@@ -4,6 +4,6 @@ mongoose.connect( process.env.MONGODB_URI ||
 
 
 module.exports = {
-  User: require('./user')
-  // , Post: require('./post')
-}
+  User: require('./user'),
+  Trail: require('./trail')
+};

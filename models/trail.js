@@ -10,5 +10,10 @@ var TrailSchema = new Schema({
   difficulty: String,
   trailSurface: String,
   trailRating: Number,
-  trailPending: Boolean
+  trailPending: Boolean,
+  created: { type: Date, default: Date.now }
 });
+
+
+var Trail = mongoose.model('Trail', trailSchema);
+module.exports = Trail;

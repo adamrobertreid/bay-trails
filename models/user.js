@@ -9,7 +9,10 @@ var userSchema = new Schema({
   password: { type: String, select: false },
   displayName: String,
   admin: Boolean,
-  trailFavorite:[String]
+  trail:{
+    type: Schema.Types.ObjectId,
+    ref: 'Trail'
+  }
 });
 
 userSchema.pre('save', function(next) {

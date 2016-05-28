@@ -8,11 +8,11 @@ function configRoutes($routeProvider, $locationProvider) {
   });
 
   $routeProvider
-    // .when('/', {
-    //   templateUrl: 'templates/posts/index.html',
-    //   controller: 'PostsIndexController',
-    //   controllerAs: 'postsIndexCtrl'
-    // })
+    .when('/', {
+      templateUrl: 'templates/trails/index.html',
+      controller: 'TrailsIndexController',
+      controllerAs: 'trailsIndexCtrl'
+    })
     .when('/signup', {
       templateUrl: 'templates/user/signup.html',
       controller: 'SignupController',
@@ -44,11 +44,12 @@ function configRoutes($routeProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
-    // .when('/posts', {
-    //   templateUrl: 'templates/posts/index.html',
-    //   controller: 'PostsIndexController',
-    //   controllerAs: 'postsIndexCtrl'
-    // })
+    .when('/trails', {
+      templateUrl: 'templates/trails/index.html',
+      controller: 'TrailsIndexController',
+      controllerAs: 'trailsIndexCtrl'
+    })
+    // .when('/trails')
     .otherwise({redirectTo: '/'});
 
 

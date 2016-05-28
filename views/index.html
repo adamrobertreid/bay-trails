@@ -33,6 +33,7 @@
     <title>BayTrails</title>
   </head>
   <body  ng-controller="MainController as main">
+    <!-- Navbar materialize -->
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Bay Trails</a>
@@ -46,9 +47,13 @@
     </nav>
 
     <!-- angular view input for templates -->
-    <div ng-view></div>
+    <div class="container">
+      <div class="row">
+        <div ng-view class="col m6 offset-m6"></div>
+      </div>
+    </div>
 
-
+     <!-- Footer materialize-->
     <footer class="page-footer">
         <div class="container">
           <div class="row">

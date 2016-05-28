@@ -11,7 +11,8 @@
     "jwt-simple": "^0.4.1",
     "moment": "^2.11.1",
     "dotenv": "^2.0.0",
-    "bcryptjs": "^2.3.0"
+    "bcryptjs": "^2.3.0",
+    "nodemon": "^1.4.1"
 
   },
   "devDependencies": {},

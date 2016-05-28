@@ -40,15 +40,10 @@ app.put('/api/me', auth.ensureAuthenticated, usersCtrl.updateCurrentUser);
 
 
 // CATCH All Route =========================================
-app.get(['/', '/signup', '/login', '/logout', '/profile'], function (req, res) {
+app.get(['/', '/signup', '/login', '/logout', '/profile', '/trails*'], function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
-// //catch all for anything
-// app.get('*', function homepage (req, res) {
-//   res.sendFile(__dirname + './views/index.html');
-// });
 
 // start app ===============================================
 // set our port

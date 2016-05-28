@@ -1,7 +1,9 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/project_03");
+    Schema = mongoose.Schema;
+
 
 var TrailSchema = new Schema({
+  created: { type: Date, default: Date.now },
   trailName: String,
   address: String,
   description: String,
@@ -10,10 +12,9 @@ var TrailSchema = new Schema({
   difficulty: String,
   trailSurface: String,
   trailRating: Number,
-  trailPending: Boolean,
-  created: { type: Date, default: Date.now }
+  trailPending: Boolean
 });
 
 
-var Trail = mongoose.model('Trail', trailSchema);
+var Trail = mongoose.model('Trail', TrailSchema);
 module.exports = Trail;

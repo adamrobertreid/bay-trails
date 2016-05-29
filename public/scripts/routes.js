@@ -9,7 +9,7 @@ function configRoutes($routeProvider, $locationProvider) {
 
   $routeProvider
     .when('/', {
-      templateUrl: 'templates/trails/index.html',
+      templateUrl: 'templates/main/index.html',
       controller: 'TrailsIndexController',
       controllerAs: 'trailsIndexCtrl'
     })

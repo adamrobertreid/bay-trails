@@ -2,29 +2,79 @@
 
 
 
-<div class="col s9">
+<div class="container">
   <div class="row">
-    <!-- <div class="col s12 m7"> -->
+    <div class="col s12 m7">
+
         <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
           <div ng-if="trailsIndexCtrl.trails.length">
             <div ng-repeat="trail in trailsIndexCtrl.trails">
               <div class="card small">
-              <!-- <p>
-                <strong><a ng-href="/trails/show{{trail._id}}">{{trail.trailName}}</a></strong> - {{trail.description}}
-              </p> -->
-
-              <div class="card-image">
-                <img class="responsive-img" src="{{trail.image}}">
-                <span class="card-title"><p>{{trail.trailName}}</p></span>
-              </div>
-              <div class="card-content card-panel teal">
-                <strong>Description</strong><p>{{trail.description}}</p>
-              </div>
-              <div class="card-action">
+                <div class="card-image">
+                  <img class="responsive-img" src="{{trail.image}}">
+                  <span class="card-title">{{trail.trailName}}</span>
+                </div>
+                <div class="card-content" id="admin-card">
+                  <strong>Description:</strong><p>{{trail.description}}</p>
+                  <strong>Dog Friendly:</strong>
+                  <strong>Description:</strong>
                   <p>{{trail.dogFriendly}} -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
+                </div>
+              <div class="card-action">
               </div>
             </div>
           </div>
       </div>
     </div>
-  </div>
+
+    <input type="text" class="form-control" ng-model="searchText" placeholder="Search Trails">
+    <div ng-repeat="trail in trailsIndexCtrl.trails | orderBy: 'trailName' | filter: searchText" class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class='row'>
+              <div class="col-md-3 col-xs-12 thumbnail">
+                <img src="images/800x800.png" alt="album image">
+              </div>
+
+              <div class="col-md-9 col-xs-12">
+                <ul class="list-group form-inline">
+                  <li class="list-group-item">
+                    <h4 class='inline-header'>Trail Name:</h4>
+                    <span ng-hide="editing"><a ng-href="{{trail._id}}">{{trail.trailName}}</a></span>
+                    <input ng-show="editing" ng-model="trail.trailName" type="text" class="form-control input-md">
+                  </li>
+
+                  <li class="list-group-item">
+                    <h4 class='inline-header'>Trail Description:</h4>
+                    <span ng-hide="editing">{{trail.description}}</span>
+                    <input ng-show="editing" ng-model="trail.description" type="text" class="form-control input-md">
+                  </li>
+
+                  <li class="list-group-item">
+                    <h4 class='inline-header'>Released date:</h4>
+                    <span ng-hide="editing">{{trail.releaseDate}}</span>
+                    <input ng-show="editing" ng-model="album.releaseDate" type="text" class="form-control input-md">
+                  </li>
+
+                  <li class="list-group-item">
+                    <h4 class="inline-header">Songs:</h4>
+                    <span ng-repeat="song in album.songs">&ndash; ({{song.trackNumber}}) {{song.name}} &ndash;</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class='panel-footer'>
+              <div class='panel-footer'>
+                <button class='btn btn-danger' ng-click="albumsIndexCtrl.deleteAlbum(album)">Delete Album</button>
+                <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Album</button>
+                <button class='btn btn-success' ng-show="editing" ng-click="albumsIndexCtrl.editAlbum(album); editing = false">Save Changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

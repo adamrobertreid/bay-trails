@@ -1,15 +1,27 @@
-<h2>Bay Trails</h2>
-<hr>
+<!-- Page Layout here -->
+<div class="row">
 
-
-<p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
-
-<div ng-if="postsIndexCtrl.posts.length">
-  <div ng-repeat="trail in trailsIndexCtrl.posts">
-    <p>
-      <strong><a ng-href="/trails/{{trail._id}}">{{trail.trailName}}</a></strong> - {{trail.description}}
-    </p>
+  <div class="col s3">
+    <div class="card small">
+      card
+    </div>
   </div>
-</div>
 
-<a class="btn btn-primary btn-block" href="/trails/new">Add New trail</a>
+  <div class="col s9">
+    <h2>Bay Trails</h2>
+    <hr>
+    <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
+    <div ng-if="trailsIndexCtrl.trails.length">
+      <div ng-repeat="trail in trailsIndexCtrl.trails">
+          <div class="card large">
+
+            <p>
+              <strong><a ng-href="/trails/{{trail._id}}">{{trail.trailName}}</a></strong> - {{trail.description}}
+            </p>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

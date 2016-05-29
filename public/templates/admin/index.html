@@ -1,80 +1,75 @@
 
-
-
-
 <div class="container">
-  <div class="row">
-    <div class="col s12 m7">
 
-        <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
-          <div ng-if="trailsIndexCtrl.trails.length">
-            <div ng-repeat="trail in trailsIndexCtrl.trails">
-              <div class="card small">
-                <div class="card-image">
-                  <img class="responsive-img" src="{{trail.image}}">
-                  <span class="card-title">{{trail.trailName}}</span>
-                </div>
-                <div class="card-content" id="admin-card">
-                  <strong>Description:</strong><p>{{trail.description}}</p>
-                  <strong>Dog Friendly:</strong>
-                  <strong>Description:</strong>
-                  <p>{{trail.dogFriendly}} -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
-                </div>
-              <div class="card-action">
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
 
     <input type="text" class="form-control" ng-model="searchText" placeholder="Search Trails">
     <div ng-repeat="trail in trailsIndexCtrl.trails | orderBy: 'trailName' | filter: searchText" class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
+      <div class="col m10 col-md-offset-1">
+        <div class="panel card-panel">
           <div class="panel-body">
 
             <div class='row'>
-              <div class="col-md-3 col-xs-12 thumbnail">
-                <img src="images/800x800.png" alt="album image">
-              </div>
 
-              <div class="col-md-9 col-xs-12">
-                <ul class="list-group form-inline">
-                  <li class="list-group-item">
-                    <h4 class='inline-header'>Trail Name:</h4>
-                    <span ng-hide="editing"><a ng-href="{{trail._id}}">{{trail.trailName}}</a></span>
+              <div class="col m9 s12">
+                <ul class="collection with-header">
+                  <li class="collection-header">
+                    <h5 class='inline-header'><a ng-href="{{trail._id}}">{{trail.trailName}}</a></h5>
+                  </li class="collection-item">
+                  <img src="{{trail.image}}" class="responsive-img" />
+                  <li>
+                  </li>
+                  <li class="collection-item">
+                    <h5 class='inline-header'>Trail Name:</h5>
+                    <hr>
+                    <span ng-hide="editing">{{trail.trailName}}</span>
                     <input ng-show="editing" ng-model="trail.trailName" type="text" class="form-control input-md">
                   </li>
 
-                  <li class="list-group-item">
-                    <h4 class='inline-header'>Trail Description:</h4>
+                  <li class="collection-item">
+                    <h5 class='inline-header'>Trail Description:</h5>
+                    <hr>
                     <span ng-hide="editing">{{trail.description}}</span>
                     <input ng-show="editing" ng-model="trail.description" type="text" class="form-control input-md">
                   </li>
 
-                  <li class="list-group-item">
-                    <h4 class='inline-header'>Released date:</h4>
-                    <span ng-hide="editing">{{trail.releaseDate}}</span>
-                    <input ng-show="editing" ng-model="album.releaseDate" type="text" class="form-control input-md">
+                  <li class="collection-item">
+                    <h5 class="inline-header">Address:</h5>
+                    <hr>
+                    <span ng-hide="editing">{{trail.address}}</span>
+                    <input ng-show="editing" ng-model="trail.address" type="text" class="form-control input-md">
                   </li>
 
-                  <li class="list-group-item">
-                    <h4 class="inline-header">Songs:</h4>
-                    <span ng-repeat="song in album.songs">&ndash; ({{song.trackNumber}}) {{song.name}} &ndash;</span>
+                  <li class="collection-item">
+                    <h5 class='inline-header'>Trail Information:</h5>
+                    <hr>
+                    <span ng-hide="editing"><strong>Dog Friendly: </strong>{{trail.dogFriendly}}</span>
+                    <input ng-show="editing" ng-model="trail.dogFriendly" type="text" class="form-control input-md">
+                    <br>
+                    <span ng-hide="editing"><strong>Trail Length: </strong>{{trail.trailLength}}</span>
+                    <input ng-show="editing" ng-model="trail.trailLength" type="text" class="form-control input-md">
+                    <br>
+                    <span ng-hide="editing"><strong>Difficulty: </strong>{{trail.difficulty}}</span>
+                    <input ng-show="editing" ng-model="trail.difficulty" type="text" class="form-control input-md">
+                    <br>
+                    <span ng-hide="editing"><strong>Trail Surface: </strong>{{trail.trailSurface}}</span>
+                    <input ng-show="editing" ng-model="trail.trailSurface" type="text" class="form-control input-md">
                   </li>
+
                 </ul>
               </div>
             </div>
 
             <div class='panel-footer'>
               <div class='panel-footer'>
-                <button class='btn btn-danger' ng-click="albumsIndexCtrl.deleteAlbum(album)">Delete Album</button>
-                <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Album</button>
-                <button class='btn btn-success' ng-show="editing" ng-click="albumsIndexCtrl.editAlbum(album); editing = false">Save Changes</button>
+                <button class='waves-effect waves-light btn' ng-click=></button>
+                <button class='waves-effect waves-light btn' ng-click="trailsIndexCtrl.deleteTrail(trail)">Delete Trail</button>
+                <button class='waves-effect waves-light btn' ng-hide="editing" ng-click="editing = true">Edit Trail</button>
+                <button class='waves-effect waves-light btn' ng-show="editing" ng-click="trailsIndexCtrl.editTrail(trail); editing = false">Save Changes</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 </div>

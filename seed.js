@@ -19,7 +19,7 @@ var user_list = [
 var trail_list = [
   {
     trailName: "Batteries to Bluffs Trail",
-    image: "imageHere",
+    image: "http://i.imgur.com/HfitIlj.jpg",
     address: "Battery to Bluffs Trail, San Francisco, CA",
     description: "This short trail provides a great way to see the bluffs near the Presidio and offers views of the Golden Gate Bridge and Marin that are hard to beat.",
     dogFriendly: true,
@@ -31,7 +31,7 @@ var trail_list = [
   },
   {
     trailName: "Stinson Beach to Mt. Tamalpais",
-    image: "imageHere",
+    image: "http://i.imgur.com/J4sQLxF.jpg",
     address: "Stinson Beach Trail, Marin, CA",
     description: "This short trail provides a great way to see the bluffs near the Presidio and offers views of the Golden Gate Bridge and Marin that are hard to beat.",
     dogFriendly: true,

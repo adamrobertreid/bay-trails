@@ -16,3 +16,45 @@
   .parallax-container {
       height: 700px;
     }
+
+
+/*================  Search bar - search input   =======================*/
+li.search{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120px;
+  margin-top: 1px;
+  padding: 1px 0 0 0;
+  z-index: 2;
+}
+.search-wrapper i.material-icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.search-wrapper #search {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  width: 100%;
+  height: 45px;
+  margin: 0;
+  padding: 0 45px 0 15px;
+  border: 0;
+}
+.search-wrapper{
+  margin: 12px;
+  transition: margin .25s ease;
+}
+.card {
+  position: relative;
+  border-radius: 2px;
+  background-color: #fff;
+}
+.search-results {
+  margin: 0;
+  border-top: 1px solid #e9e9e9;
+  background-color: #fff;
+}

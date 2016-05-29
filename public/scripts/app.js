@@ -8,9 +8,9 @@ angular
   ])
   .controller('MainController', MainController)
   .controller('TrailsIndexController', TrailsIndexController)
-  // .controller('PostsNewController', PostsNewController)
+  .controller('TrailsNewController', TrailsNewController)
   .controller('TrailsShowController', TrailsShowController)
-  // .controller('PostsEditController', PostsEditController)
+  .controller('TrailsEditController', TrailsEditController)
   .controller('LoginController', LoginController)
   .controller('SignupController', SignupController)
   .controller('LogoutController', LogoutController)
@@ -20,7 +20,8 @@ angular
   ;
 
 
-
+  $(document).ready(function(){
+    $('.parallax').parallax();
 // Plugin for materialize ui
 var app = angular.module('materializeApp', ['ui.materialize'])
     .controller('BodyController', ["$scope", function ($scope) {
@@ -29,3 +30,5 @@ var app = angular.module('materializeApp', ['ui.materialize'])
             choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
         };
     }]);
+
+  });

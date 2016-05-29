@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var TrailSchema = new Schema({
   created: { type: Date, default: Date.now },
   trailName: String,
+  image: String,
   address: String,
   description: String,
   dogFriendly: Boolean,

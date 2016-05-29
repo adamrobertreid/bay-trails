@@ -1,0 +1,30 @@
+
+
+
+
+<div class="col s9">
+  <div class="row">
+    <!-- <div class="col s12 m7"> -->
+        <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
+          <div ng-if="trailsIndexCtrl.trails.length">
+            <div ng-repeat="trail in trailsIndexCtrl.trails">
+              <div class="card small">
+              <!-- <p>
+                <strong><a ng-href="/trails/show{{trail._id}}">{{trail.trailName}}</a></strong> - {{trail.description}}
+              </p> -->
+
+              <div class="card-image">
+                <img class="responsive-img" src="{{trail.image}}">
+                <span class="card-title"><p>{{trail.trailName}}</p></span>
+              </div>
+              <div class="card-content card-panel teal">
+                <strong>Description</strong><p>{{trail.description}}</p>
+              </div>
+              <div class="card-action">
+                  <p>{{trail.dogFriendly}} -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -57,6 +57,12 @@ function configRoutes($routeProvider, $locationProvider) {
         skipIfLoggedIn: skipIfLoggedIn
       }
     })
+    .when('/trails/admin', {
+      templateUrl: 'templates/admin/index.html',
+      controller: 'TrailsIndexController',
+      controllerAs: 'trailsIndexCtrl'
+    })
+
 
 
     .otherwise({redirectTo: '/'});

@@ -21,5 +21,5 @@ function TrailsShowController ($location, $http, $routeParams) {
       console.error("Failed to get trail", response);
       $location.path("/");
     }
-  };
+  }
 }

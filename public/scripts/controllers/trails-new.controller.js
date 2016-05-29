@@ -12,11 +12,11 @@ function TrailsNewController ($location, $http) {
       .then(onCreateSuccess, onCreateError);
 
     function onCreateSuccess(response){
-      $location.path('/trails/' + response.data._id)
+      $location.path('/trails/' + response.data._id);
     }
 
     function onCreateError(response){
       console.error("Failed to create trail", response);
     }
-  };
+  }
 }

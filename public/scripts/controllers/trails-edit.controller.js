@@ -51,5 +51,5 @@ function TrailsEditController ($location, $http, $routeParams) {
       console.error("Failed to get trail", response);
       $location.path("/");
     }
-  };
+  }
 }

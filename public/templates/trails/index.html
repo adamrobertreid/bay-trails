@@ -12,20 +12,31 @@
           </li>
           <li class="search-trailhead">
             <div class="search-wrapper card focused hoverable">
-              <input id="search" placeholder="Trailhead">
+              <input id="search" placeholder="Trailhead" length="40">
               <i class="material-icons">search</i>
               <div class="search-results"></div>
             </div>
           </li>
-          
+
           <li class="search-location">
             <div class="search-wrapper card focused hoverable">
-              <input id="search" placeholder="Location">
+              <input id="search" placeholder="Location" length="40">
               <i class="material-icons">search</i>
               <div class="search-results"></div>
             </div>
           </li>
+          <li>
+          </li>
         </ul>
+        <div class="input-field col s12">
+          <select class="" material-select multiple watch>
+            <option value="" disabled selected>Trail Length</option>
+            <option value="1">0 - 2 Miles</option>
+            <option value="2">3 - 5 Miles</option>
+            <option value="3">6 + Miles</option>
+          </select>
+          <label>Materialize Multiple Select</label>
+        </div>
       </div>
     </div>
 
@@ -44,7 +55,7 @@
                     <img class="responsive-img" src="{{trail.image}}">
                     <span class="card-title"><p>{{trail.trailName}}</p></span>
                   </div>
-                  <div class="card-content card-panel teal">
+                  <div class="card-content card-panel">
                     <strong>Description</strong><p>{{trail.description}}</p>
                   </div>
                   <div class="card-action">

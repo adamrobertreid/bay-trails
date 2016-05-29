@@ -49,7 +49,16 @@ function configRoutes($routeProvider, $locationProvider) {
       controller: 'TrailsIndexController',
       controllerAs: 'trailsIndexCtrl'
     })
-    // .when('/trails')
+    .when('/login/admin', {
+      templateUrl: 'templates/admin/login.html',
+      controller: 'LoginController',
+      controllerAs: 'lc',
+      resolve: {
+        skipIfLoggedIn: skipIfLoggedIn
+      }
+    })
+
+
     .otherwise({redirectTo: '/'});
 
 

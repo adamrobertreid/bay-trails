@@ -8,6 +8,7 @@ var userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   password: { type: String, select: false },
   displayName: String,
+  avatar: String,
   admin: Boolean,
   trail:{
     type: Schema.Types.ObjectId,

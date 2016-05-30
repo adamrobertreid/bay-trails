@@ -52,7 +52,7 @@ function configRoutes($routeProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
-    .when('/adminLogin', {
+    .when('/login/admin', {
       templateUrl: 'templates/admin/login.html',
       controller: 'AdminLoginController',
       controllerAs: 'alc',
@@ -65,7 +65,7 @@ function configRoutes($routeProvider, $locationProvider) {
       controller: 'TrailsIndexController',
       controllerAs: 'trailsIndexCtrl',
       resolve: {
-        adminLoginRequired: adminLoginRequired
+        loginRequired: loginRequired
       }
     })
 
@@ -78,11 +78,6 @@ function configRoutes($routeProvider, $locationProvider) {
       }
     }
 
-    function adminLoginRequired($location, $auth) {
-      if ($auth.isAuthenticated()) {
-        $location.path('/login/admin');
-      }
-    }
 
     function loginRequired($location, $auth) {
       if (!$auth.isAuthenticated()) {

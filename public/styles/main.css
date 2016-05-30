@@ -8,12 +8,12 @@
   main {
     flex: 1 0 auto;
   }
-  #footer{
+  /*#footer{
    position:fixed;
    bottom:0;
    left:0;
    right:0;
-  }
+  }*/
   .parallax-container {
       height: 700px;
     }
@@ -70,8 +70,15 @@ li.search-location{
 }
 
 /*============   Admin Card styling ====================================*/
-#admin-card{
+/*#admin-card{
   padding: 20px;
   border-radius: 0 0 2px 2px;
   height:100px;
+}*/
+#admin-img {
+  height: 300px;
+}
+#admin-btn{
+  margin: 5px 5px 5px 5px;
+  width: 130px;
 }

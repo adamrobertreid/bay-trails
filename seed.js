@@ -46,6 +46,7 @@ var trail_list = [
 db.User.remove({}, function(){
   db.Trail.remove({}, function(){
     db.User.create(user_list, function(err, user){
+      console.log('users admin',user);
       if (err || !user) { return console.log(err); }
       db.Trail.create(trail_list, function(err, trails){
           if (err) { return console.log(err); }

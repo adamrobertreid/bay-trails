@@ -5,8 +5,8 @@ function UserService($http, $q, $auth){
   var empty_user = {
     user_id: null,
     displayName: null,
-    email: null
-  }
+    email: null,
+  };
 
   self.user = angular.extend({}, empty_user, {
     isLoggedIn: isLoggedIn
@@ -23,9 +23,9 @@ function UserService($http, $q, $auth){
   function setCurrentUser(){
     var user = $auth.getPayload();
     if (user) {
-      console.log("::: User is Logged In! :::", {user: user, token: $auth.getToken()})
+      console.log("::: User is Logged In! :::", {user: user, token: $auth.getToken()});
     } else {
-      console.log("::: No JWT found, user is not logged in. :::")
+      console.log("::: No JWT found, user is not logged in. :::");
     }
     return angular.extend(self.user, user || empty_user);
   }
@@ -37,6 +37,7 @@ function UserService($http, $q, $auth){
        .then(
          function onSuccess(response) {
            $auth.setToken(response.data.token); // set token (https://github.com/sahat/satellizer#authsettokentoken)
+           console.log("new user sign up admin", user_data);
            setCurrentUser();
          },
 
@@ -74,7 +75,6 @@ function UserService($http, $q, $auth){
             $auth.setToken(response.data.token); // set token (https://github.com/sahat/satellizer#authsettokentoken)
             setCurrentUser();
           },
-
           function onError(error) {
             console.error(error);
           }

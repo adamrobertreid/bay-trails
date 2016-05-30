@@ -31,6 +31,7 @@ app.use(logger('dev'));
 var usersCtrl = controllers.users;
 app.post('/auth/signup', usersCtrl.signup);
 app.post('/auth/login', usersCtrl.login);
+app.post('/auth/adminLogin', usersCtrl.login);
 app.get('/api/me', auth.ensureAuthenticated, usersCtrl.showCurrentUser);
 app.put('/api/me', auth.ensureAuthenticated, usersCtrl.updateCurrentUser);
 
@@ -45,7 +46,7 @@ app.delete('/api/trails/:id', trailsCtrl.destroy);
 
 
 // CATCH All Route =========================================
-app.get(['/', '/signup', '/login', '/logout', '/profile', '/trails*'], function (req, res) {
+app.get(['/', '/signup', '/login', '/logout', '/profile', '/adminLogin', '/trails*'], function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 

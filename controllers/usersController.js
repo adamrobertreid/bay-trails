@@ -3,7 +3,7 @@ var db = require('../models'),
     User = db.User;
 
 function login(req, res) {
-  User.findOne({ email: req.body.email }, '+password', function (err, user) {
+  User.findOne({ email: req.body.email}, '+password', function (err, user) {
     if (!user) {
       return res.status(401).send({ message: 'Invalid email or password.' });
     }
@@ -12,6 +12,7 @@ function login(req, res) {
         return res.status(401).send({ message: 'Invalid email or password.' });
       }
       res.send({ token: auth.createJWT(user) });
+      console.log('normal users controller', user);
     });
   });
 }
@@ -24,7 +25,8 @@ function signup(req, res) {
     var user = new User({
       displayName: req.body.displayName,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      admin: false
     });
     user.save(function (err, result) {
       if (err) {

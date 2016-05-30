@@ -1,5 +1,5 @@
 module.exports = {
   api: require('./apiController'),
-  users: require('./usersController'),
+  users: require('./usersController', './adminController'),
   trails: require('./trailsController')
 };

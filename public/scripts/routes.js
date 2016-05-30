@@ -47,12 +47,15 @@ function configRoutes($routeProvider, $locationProvider) {
     .when('/trails', {
       templateUrl: 'templates/trails/index.html',
       controller: 'TrailsIndexController',
-      controllerAs: 'trailsIndexCtrl'
+      controllerAs: 'trailsIndexCtrl',
+      resolve: {
+        loginRequired: loginRequired
+      }
     })
     .when('/login/admin', {
       templateUrl: 'templates/admin/login.html',
-      controller: 'LoginController',
-      controllerAs: 'lc',
+      controller: 'AdminLoginController',
+      controllerAs: 'alc',
       resolve: {
         skipIfLoggedIn: skipIfLoggedIn
       }
@@ -60,10 +63,11 @@ function configRoutes($routeProvider, $locationProvider) {
     .when('/trails/admin', {
       templateUrl: 'templates/admin/index.html',
       controller: 'TrailsIndexController',
-      controllerAs: 'trailsIndexCtrl'
+      controllerAs: 'trailsIndexCtrl',
+      resolve: {
+        skipIfLoggedIn: loginRequired
+      }
     })
-
-
 
     .otherwise({redirectTo: '/'});
 

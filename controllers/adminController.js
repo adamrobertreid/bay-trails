@@ -3,7 +3,7 @@ var db = require('../models'),
     User = db.User;
 
 
-function login(req, res) {
+function adminLogin(req, res) {
   User.findOne({ email: req.body.email }, '+password', function (err, user) {
     if (!user) {
       console.log('admin controller 401',user);

@@ -52,7 +52,7 @@ function configRoutes($routeProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
-    .when('/login/admin', {
+    .when('/adminLogin', {
       templateUrl: 'templates/admin/login.html',
       controller: 'AdminLoginController',
       controllerAs: 'alc',
@@ -65,7 +65,7 @@ function configRoutes($routeProvider, $locationProvider) {
       controller: 'TrailsIndexController',
       controllerAs: 'trailsIndexCtrl',
       resolve: {
-        skipIfLoggedIn: loginRequired
+        adminLoginRequired: adminLoginRequired
       }
     })
 
@@ -75,6 +75,12 @@ function configRoutes($routeProvider, $locationProvider) {
     function skipIfLoggedIn($location, $auth) {
       if ($auth.isAuthenticated()) {
         $location.path('/');
+      }
+    }
+
+    function adminLoginRequired($location, $auth) {
+      if ($auth.isAuthenticated()) {
+        $location.path('/login/admin');
       }
     }
 

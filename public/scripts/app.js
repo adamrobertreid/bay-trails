@@ -11,7 +11,6 @@ angular
   .controller('TrailsNewController', TrailsNewController)
   .controller('TrailsShowController', TrailsShowController)
   .controller('TrailsEditController', TrailsEditController)
-  .controller('AdminLoginController', AdminLoginController)
   .controller('LoginController', LoginController)
   .controller('SignupController', SignupController)
   .controller('LogoutController', LogoutController)

@@ -20,7 +20,16 @@
 
 
 /*================  Search bar - search input   =======================*/
-li.search{
+li.search-trailhead{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  margin-top: 1px;
+  padding: 1px 0 0 0;
+  z-index: 2;
+}
+li.search-location{
   position: absolute;
   left: 0;
   right: 0;

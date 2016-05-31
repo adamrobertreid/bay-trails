@@ -7,10 +7,14 @@ angular
     'satellizer'
   ])
   .controller('MainController', MainController)
+  
+  // Trails CRUD controllers ->
   .controller('TrailsIndexController', TrailsIndexController)
   .controller('TrailsNewController', TrailsNewController)
   .controller('TrailsShowController', TrailsShowController)
   .controller('TrailsEditController', TrailsEditController)
+
+  // User login-logout-profile ->
   .controller('LoginController', LoginController)
   .controller('SignupController', SignupController)
   .controller('LogoutController', LogoutController)
@@ -29,11 +33,11 @@ var app = angular.module('project_03', ['ui.materialize'])
             value: "Option1",
             choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
         };
-    }]);
-    // landing page header
-    $('.parallax').parallax();
+        // landing page header
+        $('.parallax').parallax();
 
-    // selections for search bar results
-    $('select').material_select('destroy');
+        // selections for search bar results
+        $('select').material_select('destroy');
+    }]);
 
   });

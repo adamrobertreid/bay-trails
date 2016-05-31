@@ -6,9 +6,10 @@
 <p><strong>Username:</strong> {{main.currentUser.displayName}}</p>
 <p><strong>Email:</strong> {{main.currentUser.email}}</p>
 <p><strong>Joined:</strong> {{main.currentUser.created}}</p>
-<p><strong>Posts:</strong> {{ 0 }}</p>
+
 
 <hr>
+<a class="btn waves-effect waves-light" href="/trails/new" ng-show="main.currentUser.isLoggedIn()">Submit New Trail</a>
 <a href="#" ng-click="profileCtrl.showEditForm=true" ng-hide="profileCtrl.showEditForm" class="btn btn-default"><i class="fa fa-pencil"></i> Edit Profile</a>
 
 <form ng-submit="profileCtrl.updateProfile()" ng-show="profileCtrl.showEditForm">
@@ -21,4 +22,4 @@
   <input type="submit" value="Save Profile" class="btn btn-block btn-info">
 </form>
   </div>
-</div>  
+</div>

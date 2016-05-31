@@ -46,7 +46,7 @@ var trail_list = [
     image: "http://i.imgur.com/5IiZpxP.jpg",
     address: "Mt Diablo, California 94598",
     description: "The Grand Loop offers a bird's-eye view of the Bay Area, and sometimes glimpses far beyond, of the Farallon Islands, Mount Lassen, the Sierra Nevada, and the Santa Cruz Mountains. It's also a a hotspot for wildflowers in the spring.",
-    dogFriendly: true,
+    dogFriendly: false,
     trailLength: 6.2,
     difficulty: "Moderate",
     trailSurface: "unpaved",

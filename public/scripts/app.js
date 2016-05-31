@@ -7,7 +7,7 @@ angular
     'satellizer'
   ])
   .controller('MainController', MainController)
-  
+
   // Trails CRUD controllers ->
   .controller('TrailsIndexController', TrailsIndexController)
   .controller('TrailsNewController', TrailsNewController)

@@ -1,4 +1,27 @@
-<!-- TrailsShowController as trailsShowCtrl -->
-<h2>{{"title..."}}</h2>
-<p>{{"content..."}}</p>
-<a class="btn btn-primary" ng-href="/trails/{{"_id..."}}/edit">Edit Trail</a>
+<div class="container">
+  <div class="scroll-image col s12 m7 l9">
+
+          <div class="row">
+            <div class="col s12">
+              <div class="card image hoverable">
+                <div class="card-image">
+                  <img class="responsive-img" src="{{trailsShowCtrl.trail.image}}">
+                  <span class="card-title"><p class="flow-text">{{trailsShowCtrl.trail.trailName}}</p></span>
+                </div>
+                <div  class="card-panel ">
+                  <strong>Trail Info</strong>
+                  <p ng-if="!trail.dogFriendly.false">{{trailsShowCtrl.trail.dogFriendly}}</p>
+                    <p> -- {{trailsShowCtrl.trail.trailLength}} miles {{trailsShowCtrl.trail.trailSurface}} {{trailsShowCtrl.trail.difficulty}}</p>
+                  <hr>
+                  <strong>Description</strong>
+                  <p>{{trailsShowCtrl.trail.description}}</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+  </div>
+</div>

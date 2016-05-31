@@ -1,0 +1,37 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="valign-wrapper">
+        <h1 class="valign">Submit New Trail</h1>
+      </div>
+      <hr>
+
+
+      <form ng-submit="trailsNewCtrl.create()">
+
+          <div class="col m6 file-field input-field">
+            <input type="text" placeholder="Enter trail name" ng-model="trailsNewCtrl.trail.trailName">
+            <input type="text" placeholder="Enter trail-head address" ng-model="trailsNewCtrl.trail.address">
+            <input type="text" placeholder="Trail length" ng-model="trailsNewCtrl.trail.trailLength">
+            <input type="text" placeholder="Trail surface" ng-model="trailsNewCtrl.trail.trailSurface">
+          </div>
+          <div class="col m6 file-field input-field">
+            <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly">
+            <input type="text" placeholder="Difficulty" ng-model="trailsNewCtrl.trail.difficulty">
+            <div class="btn file-field input-field">
+              <span>File</span>
+              <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input type="text" class="file-path validate">
+            </div>
+            <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
+          </div>
+      </form>
+
+
+      
+    </div>
+  </div>
+</div>

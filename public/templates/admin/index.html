@@ -1,36 +1,35 @@
 
 <div class="container">
-  <div class="valign-wrapper">
-    <h1 class="valign">Admin Console</h1>
-  </div>
   <div class="row">
     <div class="col s12">
+      <div class="valign-wrapper">
+        <h1 class="valign">Admin Console</h1>
+      </div>
       <hr>
-      <form action="">
+      <form ng-submit="trailsNewCtrl.create()">
 
           <div class="col m6 file-field input-field">
-            <input  name="trailName" type="text" placeholder="Enter trail name">
-            <input  name="address" type="text" placeholder="Enter trail-head address">
-            <input  name="state" type="text" placeholder="Trail length">
-            <input  name="email" type="text" placeholder="Trail surface">
+            <input type="text" placeholder="Enter trail name" ng-model="trailsNewCtrl.trail.trailName">
+            <input type="text" placeholder="Enter trail-head address" ng-model="trailsNewCtrl.trail.address">
+            <input type="text" placeholder="Trail length" ng-model="trailsNewCtrl.trail.trailLength">
+            <input type="text" placeholder="Trail surface" ng-model="trailsNewCtrl.trail.trailSurface">
           </div>
-
           <div class="col m6 file-field input-field">
-            <input  name="ratings" type="text" placeholder="Dogs friendly">
-            <input  name="city" type="text" placeholder="Difficulty">
-            <div class="btn">
+            <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly">
+            <input type="text" placeholder="Difficulty" ng-model="trailsNewCtrl.trail.difficulty">
+            <div class="btn file-field input-field">
               <span>File</span>
               <input type="file">
             </div>
             <div class="file-path-wrapper">
               <input type="text" class="file-path validate">
             </div>
-            <input type="submit" value="Submit" class="btn waves-effect waves-light right-align">
+            <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
           </div>
       </form>
     </div>
   </div>
-  
+
     <!-- SEARCH AND EDIT TRAILS IN ADMIN -->
     <div class="col s12 m6 l4">
 
@@ -38,7 +37,7 @@
         <input type="text" ng-model="searchText" placeholder="Search Trail Name">
           <div ng-repeat="trail in trailsIndexCtrl.trails | orderBy: 'trailName' | filter: searchText">
             <div class="row">
-              <div class="card col s12">
+              <div class="card hoverable col s12">
 
 
                   <div class=" col s12 valign-wrapper">
@@ -94,8 +93,8 @@
 
                     <div class="col s12 m6 l4">
                       <button id="admin-btn" class='waves-effect waves-yellow btn orange'>Approve</button>
-                      <button id="admin-btn" class='waves-effect waves-yellow btn red' ng-click="trailsIndexCtrl.deleteTrail(trail)">Delete</button>
-                      <button id="admin-btn" class='waves-effect waves-teal btn blue' ng-hide="editing" ng-click="editing = true">Edit</button>
+                      <input id="admin-btn" class='waves-effect waves-yellow btn red' ng-click="trailsEdiCtrl.deleteTrail(trail)">Delete</button>
+                      <input id="admin-btn" class='waves-effect waves-teal btn blue' ng-hide="editing" ng-click="editing = true">Edit</button>
                       <button id="admin-btn" class='waves-effect waves-teal btn' ng-show="editing" ng-click="trailsIndexCtrl.editTrail(trail); editing = false">Save Changes</button>
                     </div>
 

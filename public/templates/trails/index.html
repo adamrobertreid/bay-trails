@@ -9,6 +9,7 @@
             <li class="logo">
               <a id="logo-container" href="" class="brand-logo">
             </li>
+            <!-- === TRAILHEAD SEARCH FIELD === -->
             <li class="search-trailhead">
               <div class="search-wrapper card focused hoverable">
                 <input id="search" placeholder="Trailhead" length="40">
@@ -16,7 +17,7 @@
                 <div class="search-results"></div>
               </div>
             </li>
-
+            <!-- ==== LOCATION SEARCH FIELD === -->
             <li class="search-location">
               <div class="search-wrapper card focused hoverable">
                 <input id="search" placeholder="Location" length="40">
@@ -24,52 +25,51 @@
                 <div class="search-results"></div>
               </div>
             </li>
+            <!-- === TRAIL LENGTH === -->
             <li>
+              <div class="input-field col s12">
+                <select class="" material-select multiple watch>
+                  <option value="" disabled selected>Trail Length</option>
+                  <option value="1">0 - 2 Miles</option>
+                  <option value="2">3 - 5 Miles</option>
+                  <option value="3">6 + Miles</option>
+                </select>
+                <label>Materialize Multiple Select</label>
+              </div>
             </li>
           </ul>
-          <div class="input-field col s12">
-            <select class="" material-select multiple watch>
-              <option value="" disabled selected>Trail Length</option>
-              <option value="1">0 - 2 Miles</option>
-              <option value="2">3 - 5 Miles</option>
-              <option value="3">6 + Miles</option>
-            </select>
-            <label>Materialize Multiple Select</label>
-          </div>
         </div>
       </div>
 
-    <div class="col s12 m7 l8 offset-l1">
+    <!-- ======  DISPLAYING EACH TRAIL ON A SINGLE CARD  =============== -->
+    <div class="scroll-image col s12 m7 l9">
+      <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
+        <div ng-if="trailsIndexCtrl.trails.length">
+          <div ng-repeat="trail in trailsIndexCtrl.trails">
+            <div class="row">
+              <div class="col s12">
+                <div class="card image hoverable">
+                  <div class="card-image">
+                    <img class="responsive-img" src="{{trail.image}}">
+                    <a ng-href="/trails/{{trail._id}}"><span class="card-title">{{trail.trailName}}</span></a>
 
-            <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
-              <div ng-if="trailsIndexCtrl.trails.length">
-                <div ng-repeat="trail in trailsIndexCtrl.trails">
+                  </div>
+                  <div  class="card-panel ">
+                    <strong>Trail Info</strong>
+                    <p ng-if="!trail.dogFriendly.false">{{trail.dogFriendly}}</p>
+                      <p> -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
+                    <hr>
+                    <strong>Description</strong>
+                    <p class="flow-text">{{trail.description}}</p>
 
-                  <div class="row">
-                    <div class="col s12">
-
-
-                  <div class="card image hoverable">
-                    <div class="card-image">
-                      <img class="responsive-img" src="{{trail.image}}">
-                      <span class="card-title"><p class="flow-text">{{trail.trailName}}</p></span>
-                    </div>
-                    <div  class="card-panel ">
-                      <i class="small material-icons">grade</i><br>
-                      <strong>Description</strong>
-                      <hr>
-                      <p>{{trail.description}}</p>
-                      <strong>Trail Info</strong>
-                      <hr>
-                      <p>{{trail.dogFriendly}} -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
-                    </div>
-                </div>
+                  </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-
+<!-- THIS DIV CLOSES THE CONTAINER OF PAGE  -->
 </div>

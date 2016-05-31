@@ -86,3 +86,8 @@ li.search-location{
     max-height: 300px;
     overflow: hidden;
 }
+.scroll-image{
+  height: 700px;
+  overflow: auto;
+
+}

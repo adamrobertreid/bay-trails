@@ -2,9 +2,9 @@ var db = require("./models");
 
 var user_list = [
   {
-    email: "adam@mail.com",
+    email: "admin@mail.com",
     password: "123",
-    displayName: "adamreid",
+    displayName: "Admin Account",
     admin: true
   },
   {
@@ -39,6 +39,18 @@ var trail_list = [
     difficulty: "Difficult",
     trailSurface: "unpaved",
     trailRating: "",
+    trailPending: false,
+  },
+  {
+    trailName: "Mount Diablo's Grand Loop",
+    image: "http://i.imgur.com/5IiZpxP.jpg",
+    address: "Mt Diablo, California 94598",
+    description: "The Grand Loop offers a bird's-eye view of the Bay Area, and sometimes glimpses far beyond, of the Farallon Islands, Mount Lassen, the Sierra Nevada, and the Santa Cruz Mountains. It's also a a hotspot for wildflowers in the spring.",
+    dogFriendly: true,
+    trailLength: 6.2,
+    difficulty: "Moderate",
+    trailSurface: "unpaved",
+    trailRating: "",
     trailPending: true,
   }
 ];
@@ -46,11 +58,11 @@ var trail_list = [
 db.User.remove({}, function(){
   db.Trail.remove({}, function(){
     db.User.create(user_list, function(err, user){
-      console.log('users admin',user);
+      console.log('users',user);
       if (err || !user) { return console.log(err); }
       db.Trail.create(trail_list, function(err, trails){
           if (err) { return console.log(err); }
-          console.log("Created", trails.length, "trails");
+          console.log("Created", trails.length, "trails" + trails);
           process.exit();
         }
       );

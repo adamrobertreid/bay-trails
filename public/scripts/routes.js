@@ -13,6 +13,7 @@ function configRoutes($routeProvider, $locationProvider) {
       controller: 'TrailsIndexController',
       controllerAs: 'trailsIndexCtrl'
     })
+    // ============= ROUTES TO USER LOGIN / LOGOUT / SIGN UP PAGES =============
     .when('/signup', {
       templateUrl: 'templates/user/signup.html',
       controller: 'SignupController',
@@ -44,6 +45,7 @@ function configRoutes($routeProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
+    // =========================== ROUTES TO TRAILS PAGES ======================
     .when('/trails', {
       templateUrl: 'templates/trails/index.html',
       controller: 'TrailsIndexController',
@@ -52,6 +54,31 @@ function configRoutes($routeProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
+    .when('/trails/new', {
+      templateUrl: 'templates/trails/new.html',
+      controller: 'TrailsNewController',
+      controllerAs: 'trailsNewCtrl',
+      resolve: {
+        loginRequired: loginRequired
+      }
+    })
+    .when('/trails/:id', {
+      templateUrl: 'templates/trails/show.html',
+      controller: 'TrailsShowController',
+      controllerAs: 'trailsShowCtrl',
+      resolve: {
+        loginRequired: loginRequired
+      }
+    })
+    .when('/trails/:id/edit', {
+      templateUrl: 'templates/trails/edit.html',
+      controller: 'TrailsEditController',
+      controllerAs: 'trailsEditCtrl',
+      resolve: {
+        loginRequired: loginRequired
+      }
+    })
+    // =========================== ROUTES TO ADMIN PAGES ======================
     .when('/login/admin', {
       templateUrl: 'templates/admin/login.html',
       controller: 'AdminLoginController',
@@ -68,7 +95,7 @@ function configRoutes($routeProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
-
+    // =============== WHEN THERE IS NO ROUTE REDIRECT TO MAIN PAGE ===========
     .otherwise({redirectTo: '/'});
 
 

@@ -7,7 +7,7 @@ angular
     'satellizer'
   ])
   .controller('MainController', MainController)
-  
+
   // Trails CRUD controllers ->
   .controller('TrailsIndexController', TrailsIndexController)
   .controller('TrailsNewController', TrailsNewController)
@@ -26,6 +26,17 @@ angular
 
 
   $(document).ready(function(){
+
+    uploadcare.openDialog(null, {
+  crop: "disabled",
+  previewStep: true,
+  imagesOnly: true
+}).done(function(file) {
+  file.promise().done(function(fileInfo){
+    console.log(fileInfo.cdnUrl);
+  });
+});
+
 // Plugin for materialize ui
 var app = angular.module('project_03', ['ui.materialize'])
     .controller('MainController', ["$scope", function ($scope) {

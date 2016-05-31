@@ -26,6 +26,7 @@ app.use(logger('dev'));
 
 
 // ROUTES==================================================
+app.get('/api',controllers.api.index);
 
 // Auth Routes
 var usersCtrl = controllers.users;

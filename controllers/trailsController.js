@@ -6,7 +6,7 @@ var db = require('../models'),
 function index(req, res) {
   Trail
     .find({})
-    // .populate('user')
+
     .exec(function(err, trails){
       if (err || !trails || !trails.length) {
         return res.status(404).send({message: 'Trails not found.'});
@@ -25,7 +25,7 @@ function create(req, res){
 function show(req, res){
   Trail
     .findById(req.params.id)
-    // .populate('user')
+
     .exec(function(err, found_trail){
       if (err || !found_trail) {
         return res.status(404).send({message: 'Trail not found.'});
@@ -55,10 +55,7 @@ function destroy(req, res){
   var query = {
     _id: req.params.id
   };
-  //
-  // if (req.user_id) {
-  //   query.user = req.user_id;
-  // }
+
 
   Trail
     .findOneAndRemove(query)
@@ -66,7 +63,7 @@ function destroy(req, res){
       if (err || !trail) {
         return res.status(404).send({messsage: 'Failed to delete trail.'});
       }
-      res.status(204).send();
+      res.status(204).send(query);
     });
 }
 

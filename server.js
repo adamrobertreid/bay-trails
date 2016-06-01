@@ -45,8 +45,10 @@ app.put('/api/trails/:id', trailsCtrl.update);
 app.delete('/api/trails/:id', trailsCtrl.destroy);
 
 
+
+
 // CATCH All Route =========================================
-app.get(['/', '/signup', '/login', '/logout', '/profile', '/trails*'], function (req, res) {
+app.get(['/', '/signup', '/login', '/logout', '/admin', '/profile', '/trails*'], function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 

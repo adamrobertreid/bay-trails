@@ -21,6 +21,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.13.4/satellizer.min.js"></script>
 
     <!-- custom script (angular app) -->
+    <script type="text/javascript" src="scripts/controllers/admin.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/auth-login.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/auth-logout.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/main.controller.js"></script>
@@ -42,17 +43,22 @@
     <!-- Navbar materialize -->
     <nav>
       <div class="nav-wrapper teal">
-        <a href="/views/index.html" class="brand-logo">Bay Trails</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"<i class="material-icons">menu</i></a>
+        <ul class="left">
+          <a ng-show="!main.currentUser.isLoggedIn" class="brand-logo"></a>
+          <a ng-show="main.currentUser.isLoggedIn" href="/views/index.html" class="brand-logo">Bay Trails</a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </ul>
         <ul class="right hide-on-med-and-down">
           <li ng-show="!main.currentUser.isLoggedIn()"><a href="/signup">Sign Up</a></li>
           <li ng-show="!main.currentUser.isLoggedIn()"><a href="/login">Log In</a></li>
+          <li ng-show="main.currentUser.isLoggedIn()"><a href="/trails">Trails</a></li>
           <li ng-show="main.currentUser.isLoggedIn()"><a href="/profile">{{main.currentUser.displayName}}'s  Profile</a></li>
           <li ng-show="main.currentUser.isLoggedIn()"><a href="/logout">Log Out</a></li>
         </ul>
-        <ul id="mobile-demo" class="side-nav">
+        <ul  id="nav-mobile"class="side-nav">
           <li ng-show="!main.currentUser.isLoggedIn()"><a href="/signup">Sign Up</a></li>
           <li ng-show="!main.currentUser.isLoggedIn()"><a href="/login">Log In</a></li>
+          <li ng-show="main.currentUser.isLoggedIn()"><a href="/trails">Trails</a></li>
           <li ng-show="main.currentUser.isLoggedIn()"><a href="/profile">{{main.currentUser.displayName}}'s  Profile</a></li>
           <li ng-show="main.currentUser.isLoggedIn()"><a href="/logout">Log Out</a></li>
         </ul>

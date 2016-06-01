@@ -9,24 +9,33 @@
             <li class="logo">
               <a id="logo-container" href="" class="brand-logo">
             </li>
-            <!-- === TRAILHEAD SEARCH FIELD === -->
-            <li class="search-trailhead">
-              <div class="search-wrapper card focused hoverable">
-                <input id="search" placeholder="Trailhead" length="40">
-                <i class="material-icons">search</i>
-                <div class="search-results"></div>
-              </div>
-            </li>
-            <!-- ==== LOCATION SEARCH FIELD === -->
-            <li class="search-location">
-              <div class="search-wrapper card focused hoverable">
-                <input id="search" placeholder="Location" length="40">
-                <i class="material-icons">search</i>
-                <div class="search-results"></div>
-              </div>
-            </li>
-            <!-- === TRAIL LENGTH === -->
             <li>
+              <label>Any<input ng-model="search.trailName"></label> <br>
+            </li>
+            <li>
+              <label>Address<input ng-model="search.address"></label><br>
+            </li>
+            <li>
+              <label>Dog friendly<input type="checkbox" ng-model="search.dogFriendly"></label><br>
+            </li>
+            <!-- === TRAILHEAD SEARCH FIELD === -->
+            <!-- <li class="search-trailhead">
+              <div class="search-wrapper card focused hoverable">
+                <input id="search" text="text" ng-model="searchText1" placeholder="Trailhead" length="40">
+                <i class="material-icons">search</i>
+                <div class="search-results"></div>
+              </div>
+            </li>
+            < ==== LOCATION SEARCH FIELD === -->
+            <!-- <li class="search-location">
+              <div class="search-wrapper card focused hoverable">
+                <input id="search" text="text" ng-model="searchText2" placeholder="Location" length="40">
+                <i class="material-icons">search</i>
+                <div class="search-results"></div>
+              </div>
+            </li> -->
+            <!-- === TRAIL LENGTH === -->
+            <!-- <li>
               <div class="input-field col s12">
                 <select class="" material-select multiple watch>
                   <option value="" disabled selected>Trail Length</option>
@@ -36,8 +45,19 @@
                 </select>
                 <label>Materialize Multiple Select</label>
               </div>
-            </li>
+            </li> -->
           </ul>
+          <label>Any: <input ng-model="search.$"></label> <br>
+          <label>Name only <input ng-model="search.trailName"></label><br>
+          <label>Phone only <input ng-model="search.address"></label><br>
+          <label>Equality <input type="checkbox" ng-model="strict"></label><br>
+          <!-- <table id="">
+            <tr><th>Name</th><th>Phone</th></tr>
+            <tr ng-repeat="trail in trailsIndexCtrl.trails | filter:search:strict">
+              <td>{{trail.trailName}}</td>
+              <td>{{trail.address}}</td>
+            </tr>
+          </table> -->
         </div>
       </div>
 
@@ -45,7 +65,7 @@
     <div class="scroll-image col s12 m7 l9">
       <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
         <div ng-if="trailsIndexCtrl.trails.length">
-          <div ng-repeat="trail in trailsIndexCtrl.trails">
+          <div ng-repeat="trail in trailsIndexCtrl.trails | filter: search:strict">
             <div class="row">
               <div class="col s12">
                 <div class="card image hoverable">
@@ -60,7 +80,7 @@
                       <p> -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
                     <hr>
                     <strong>Description</strong>
-                    <p class="flow-text">{{trail.description}}</p>
+                    <p class="flow-text">{{trail.description}}{{trail.address}}</p>
 
                   </div>
                 </div>

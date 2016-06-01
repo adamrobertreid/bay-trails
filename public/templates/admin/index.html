@@ -3,20 +3,22 @@
   <div class="row">
     <div class="col s12">
       <div class="valign-wrapper">
-        <h1 class="valign">Admin Console</h1>
+        <h1 class="valign">Submit New Trail</h1>
       </div>
       <hr>
-      <form ng-controller="TrailsNewController" ng-submit="trailsNewCtrl.create()">
+
+
+      <form ng-submit="adminCtrl.create()">
 
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Enter trail name" ng-model="trailsNewCtrl.trail.trailName">
-            <input type="text" placeholder="Enter trail-head address" ng-model="trailsNewCtrl.trail.address">
-            <input type="text" placeholder="Trail length" ng-model="trailsNewCtrl.trail.trailLength">
-            <input type="text" placeholder="Trail surface" ng-model="trailsNewCtrl.trail.trailSurface">
+            <input type="text" placeholder="Enter trail name" ng-model="adminCtrl.trail.trailName">
+            <input type="text" placeholder="Enter trail-head address" ng-model="adminCtrl.trail.address">
+            <input type="text" placeholder="Trail length" ng-model="adminCtrl.trail.trailLength">
+            <input type="text" placeholder="Trail surface" ng-model="adminCtrl.trail.trailSurface">
           </div>
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly">
-            <input type="text" placeholder="Difficulty" ng-model="trailsNewCtrl.trail.difficulty">
+            <input type="text" placeholder="Dogs friendly" ng-model="adminCtrl.trail.dogFriendly">
+            <input type="text" placeholder="Difficulty" ng-model="adminCtrl.trail.difficulty">
             <div class="btn file-field input-field">
               <span>File</span>
               <input type="file">
@@ -27,15 +29,16 @@
             <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
           </div>
       </form>
+
     </div>
   </div>
 
     <!-- SEARCH AND EDIT TRAILS IN ADMIN -->
-    <div class="scroll-image col s12 m6 l4">
+    <div class="col s12 m6 l4">
 
         <!-- ANGULAR USED TO SEARCH TRAIL BY TRAIL NAME  -->
         <input type="text" ng-model="searchText" placeholder="Search Trail Name">
-        <div ng-repeat="trail in trailsIndexCtrl.trails | orderBy: 'trailName' | filter: searchText">
+        <div ng-repeat="trail in adminCtrl.trails | orderBy: 'trailName' | filter: searchText">
           <div class="row">
 
               <div class="card hoverable col s12">
@@ -43,61 +46,62 @@
                 <div class=" col s12 valign-wrapper">
                   <h5 class='valign'>{{trail.trailName}}</h5>
                 </div>
-                <div class="col col s12 m6 l4 card-image ">
+                <div class=" col s12 m6 l4 card-image ">
                   <img id="admin-img" src="{{trail.image}}" class="responsive-img"/>
                 </div>
                 <div class="col col s12 m6 l4 card-content">
-                  <form ng-submit="trailsEditCtrl.update()">
+            <!-- =============================================================================== -->
+                  <form ng-submit="adminCtrl.update()">
                     <!-- TRAIL NAME -->
                     <div input-field>
                       <label>Trail name input</label><br>
-                      <input ng-show="editing" ng-model="trailsEditCtrl.trail.trailName" type="text">
                       <span ng-hide="editing">{{trail.trailName}}</span>
+                      <input ng-show="editing" ng-model="adminCtrl.trail.trailName" type="text">
                     </div>
                    <!-- TRAIL DESCRIPTION -->
                     <div input-field>
                       <label>Description input</label><br>
-                      <input ng-show="editing" ng-model="trailsEditCtrl.trail.description" type="text">
+                      <input ng-show="editing" ng-model="adminCtrl.trail.description" type="text">
                       <span ng-hide="editing">{{trail.description}}</span>
                     </div>
                     <!-- TRAIL ADDRESS -->
                     <div input-field>
                       <label>Address input</label><br>
-                      <input ng-show="editing" ng-model="trailsEditCtrl.trail.address" type="text">
+                      <input ng-show="editing" ng-model="adminCtrl.trail.address" type="text">
                       <span ng-hide="editing">{{trail.address}}</span>
                     </div>
                     <!-- DOG FRIENDLY -->
                     <div input-field>
                       <label>Dog friendly input</label><br>
                       <span ng-hide="editing">{{trail.dogFriendly}}</span>
-                      <input ng-show="editing" ng-model="trailsEditCtrl.trail.dogFriendly" type="text">
+                      <input ng-show="editing" ng-model="adminCtrl.trail.dogFriendly" type="text">
                     </div>
                     <!-- TRAIL LENGTH -->
                     <div input-field>
                       <label>Trail length input</label><br>
                       <span ng-hide="editing">{{trail.trailLength}}</span>
-                      <input ng-show="editing" ng-model="trailsEditCtrl.trail.trailLength" type="text">
+                      <input ng-show="editing" ng-model="adminCtrl.trail.trailLength" type="text">
                     </div>
                     <!-- TRAIL DIFFICULTY -->
                     <div input-field>
                       <label>Trail difficulty input</label><br>
                       <span ng-hide="editing">{{trail.difficulty}}</span>
-                      <input ng-show="editing" ng-model="trailsEditCtrl.trail.difficulty" type="text">
+                      <input ng-show="editing" ng-model="adminCtrl.trail.difficulty" type="text">
                     </div>
                     <!-- TRAIL SURFACE -->
                     <div input-field>
                       <label>Trail surface input</label><br>
                       <span ng-hide="editing">{{trail.trailSurface}}</span>
-                      <input ng-show="editing" ng-model="trailsEditCtrl.trail.trailSurface" type="text">
+                      <input ng-show="editing" ng-model="adminCtrl.trail.trailSurface" type="text">
                     </div>
                 </div>
 
-                <div input-field class="col s12 m6 l4">
+                <div  class="col s12 m6 l4">
                   <a id="admin-btn" class='waves-effect waves-yellow btn orange'>Approve</a>
-                  <a id="admin-btn" class='waves-effect waves-yellow btn red' ng-click="trailsEditCtrl.destroy()">Delete Trail</a>
+                  <a id="admin-btn" class='waves-effect waves-yellow btn red' ng-click="adminCtrl.destroy()">Delete Trail</a>
                   <a id="admin-btn" class='waves-effect waves-teal btn blue' ng-hide="editing" ng-click="editing = true">Edit</a>
-                  <input id="admin-btn" type="Submit" value="Update Trail"class='waves-effect waves-teal btn' ng-show="editing">
                 </div>
+                <input id="admin-btn" type="Submit" value="Update Trail" class='waves-effect waves-teal btn'>
               </form>
             </div>
 

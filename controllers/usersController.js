@@ -7,6 +7,7 @@ function login(req, res) {
     if (!user) {
       return res.status(401).send({ message: 'Invalid email or password.' });
     }
+
     user.comparePassword(req.body.password, function (err, isMatch) {
       if (!isMatch) {
         return res.status(401).send({ message: 'Invalid email or password.' });

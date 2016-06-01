@@ -46,7 +46,7 @@ function configRoutes($routeProvider, $locationProvider) {
       }
     })
     // =========================== ROUTES TO TRAILS PAGES ======================
-    .when('/trails/admin', {
+    .when('/trails', {
       templateUrl: 'templates/trails/index.html',
       controller: 'TrailsIndexController',
       controllerAs: 'trailsIndexCtrl',
@@ -79,22 +79,15 @@ function configRoutes($routeProvider, $locationProvider) {
       }
     })
     // =========================== ROUTES TO ADMIN PAGES ======================
-    .when('/login/admin', {
-      templateUrl: 'templates/admin/login.html',
-      controller: 'LoginController',
-      controllerAs: 'lc',
+    .when('/admin', {
+      templateUrl: 'templates/admin/index.html',
+      controller: 'AdminController',
+      controllerAs: 'adminCtrl',
       resolve: {
-        skipIfLoggedIn: skipIfLoggedIn
+        loginRequired: loginRequired
       }
     })
-    .when('/trails/admin', {
-      templateUrl: 'templates/admin/index.html',
-      controller: 'TrailsIndexController',
-      controllerAs: 'trailsIndexCtrl',
-      // resolve: {
-      //   // loginRequired: loginRequired
-      // }
-    })
+
     // =============== WHEN THERE IS NO ROUTE REDIRECT TO MAIN PAGE ===========
     .otherwise({redirectTo: '/'});
 

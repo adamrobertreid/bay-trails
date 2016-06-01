@@ -8,12 +8,10 @@
   main {
     flex: 1 0 auto;
   }
-  /*#footer{
-   position:fixed;
-   bottom:0;
-   left:0;
-   right:0;
-  }*/
+
+  main {
+    flex: 1 0 auto;
+  }
   .parallax-container {
 
       height: 700px;

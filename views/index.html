@@ -21,6 +21,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.13.4/satellizer.min.js"></script>
 
     <!-- custom script (angular app) -->
+    <script type="text/javascript" src="scripts/controllers/admin.login.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/admin.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/auth-login.controller.js"></script>
     <script type="text/javascript" src="scripts/controllers/auth-logout.controller.js"></script>
@@ -61,6 +62,7 @@
           <li ng-show="!main.currentUser.isLoggedIn()"><a href="/signup">Sign Up</a></li>
           <li ng-show="!main.currentUser.isLoggedIn()"><a href="/login">Log In</a></li>
           <li ng-show="main.currentUser.isLoggedIn()"><a href="/trails">Trails</a></li>
+          <li ng-show="main.currentUser.isLoggedIn()"><a href="/trails/new">Submit Trail</a></li>
           <li ng-show="main.currentUser.isLoggedIn()"><a href="/profile">{{main.currentUser.displayName}}'s  Profile</a></li>
           <li ng-show="main.currentUser.isLoggedIn()"><a href="/logout">Log Out</a></li>
         </ul>
@@ -83,7 +85,7 @@
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Links</h5>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li ng-show="!main.currentUser.isLoggedIn()"><a href="/login/admin">Admin</a></li>
+                <li ng-show="!main.currentUser.isLoggedIn()"><a href="/admin/login">Admin</a></li>
               </ul>
             </div>
           </div>

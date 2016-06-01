@@ -33,6 +33,7 @@ function createJWT(user) {
     user_id: user._id, // required by satellizer
     displayName: user.displayName,
     email: user.email,
+    admin: user.admin,
     iat: moment().unix(),
     exp: moment().add(14, 'days').unix()
   };

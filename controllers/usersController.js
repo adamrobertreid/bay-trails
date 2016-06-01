@@ -26,9 +26,9 @@ function signup(req, res) {
     var user = new User({
       displayName: req.body.displayName,
       email: req.body.email,
-      password: req.body.password,
-      admin: false
+      password: req.body.password
     });
+    console.log('new user created', user.admin);
     user.save(function (err, result) {
       if (err) {
         res.status(500).send({ message: err.message });

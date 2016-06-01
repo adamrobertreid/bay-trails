@@ -7,18 +7,18 @@ function AdminController ($location, $http, $routeParams) {
   vm.create = create;
   vm.trail = {}; // form data
 
-  var id = $routeParams.id;
+  var id = $routeParams._id;
   get(); // fetch one trail (show)
 
   ////
 
-  function update() {
+  function update(trail) {
     $http
-      .put('/api/trails/' + id, vm.trail)
+      .put('/api/trails/' + trail._id, trail)
       .then(onUpdateSuccess, onUpdateError);
 
     function onUpdateSuccess(response){
-      $location.path("/trails/" + id);
+      $location.path("/admin");
     }
 
     function onUpdateError(response){
@@ -26,9 +26,9 @@ function AdminController ($location, $http, $routeParams) {
     }
   }
 
-  function destroy() {
+  function destroy(trail) {
     $http
-      .delete('/api/trails/' + id)
+      .delete('/api/trails/' + trail._id)
       .then(onDeleteSuccess, onDeleteError);
 
     function onDeleteSuccess(response){

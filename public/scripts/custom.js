@@ -10,7 +10,7 @@ $('.parallax').parallax();
 $(".button-collapse").sideNav();
 
 
-
+$('.modal-trigger').leanModal();
     // selections for search bar results
 $('select').material_select('destroy');
 

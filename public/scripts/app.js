@@ -18,6 +18,7 @@ angular
   .controller('TrailsShowController', TrailsShowController)
   .controller('TrailsEditController', TrailsEditController)
   .controller('AdminController', AdminController)
+  .controller('AdminLoginController', AdminLoginController)
   // User login-logout-profile ->
   .controller('LoginController', LoginController)
   .controller('SignupController', SignupController)

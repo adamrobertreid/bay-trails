@@ -35,6 +35,9 @@ app.post('/auth/login', usersCtrl.login);
 app.get('/api/me', auth.ensureAuthenticated, usersCtrl.showCurrentUser);
 app.put('/api/me', auth.ensureAuthenticated, usersCtrl.updateCurrentUser);
 
+//Adding favorite trail to users profile
+// app.put('/api/me/trails/:id', auth.ensureAuthenticated, usersCtrl.putCurrentUser);
+
 //JSON API Endpoints ======================================
 
 var trailsCtrl = controllers.trails;

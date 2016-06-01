@@ -33,7 +33,9 @@
     <script type="text/javascript" src="scripts/controllers/user-signup.controller.js"></script>
     <script type="text/javascript" src="scripts/services/user.service.js"></script>
     <script type="text/javascript" src="scripts/routes.js"></script>
+    <script type="text/javascript" src="/scripts/custom.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+
 
     <title>BayTrails</title>
   </head>
@@ -44,8 +46,8 @@
     <nav>
       <div class="nav-wrapper teal">
         <ul class="left">
-          <a ng-show="!main.currentUser.isLoggedIn" class="brand-logo"></a>
-          <a ng-show="main.currentUser.isLoggedIn" href="/views/index.html" class="brand-logo">Bay Trails</a>
+          <a ng-hide="!main.currentUser.isLoggedIn()" class="brand-logo"></a>
+          <a ng-show="main.currentUser.isLoggedIn()" href="/views/index.html" class="brand-logo">Bay Trails</a>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </ul>
         <ul class="right hide-on-med-and-down">
@@ -66,9 +68,9 @@
     </nav>
 
     <!-- angular view input for templates -->
-
+        <main>
         <div ng-view></div>
-
+      </main>
 
      <!-- Footer materialize-->
     <footer id="footer" class="page-footer teal">

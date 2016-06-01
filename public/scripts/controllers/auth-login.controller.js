@@ -7,8 +7,15 @@ function LoginController ($location, UserService) {
     UserService
       .login(vm.new_user)
       .then(function onSuccess(){
-        vm.new_user = {}; // clear sign up form
-        $location.path('/trails'); // redirect to '/profile'
+        console.log('log admin', UserService.user.admin);
+
+        if (UserService.user.admin) {
+          vm.new_user = {}; // clear sign up form
+          $location.path('/admin');
+        }else {
+          vm.new_user = {}; // clear sign up form
+          $location.path('/trails'); // redirect to '/profile'
+        }
       });
   };
 }

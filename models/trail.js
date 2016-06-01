@@ -8,12 +8,12 @@ var TrailSchema = new Schema({
   image: String,
   address: String,
   description: String,
-  dogFriendly: Boolean,
+  dogFriendly: { type: Boolean, default: false},
   trailLength: Number,
   difficulty: String,
   trailSurface: String,
   trailRating: Number,
-  trailPending: Boolean
+  trailPending: { type: Boolean, default: false}
 });
 
 

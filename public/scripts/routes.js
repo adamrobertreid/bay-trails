@@ -87,6 +87,14 @@ function configRoutes($routeProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
+    .when('/admin/login', {
+      templateUrl: 'templates/admin/login.html',
+      controller: 'AdminLoginController',
+      controllerAs: 'adminLoginCtrl',
+      resolve: {
+        skipIfLoggedIn: skipIfLoggedIn
+      }
+    })
 
     // =============== WHEN THERE IS NO ROUTE REDIRECT TO MAIN PAGE ===========
     .otherwise({redirectTo: '/'});

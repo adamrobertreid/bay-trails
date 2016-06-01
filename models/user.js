@@ -9,7 +9,7 @@ var userSchema = new Schema({
   password: { type: String, select: false },
   displayName: String,
   avatar: String,
-  admin: Boolean,
+  admin: { type: Boolean, default: false },
   trail:{
     type: Schema.Types.ObjectId,
     ref: 'Trail'

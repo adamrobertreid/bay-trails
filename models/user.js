@@ -10,10 +10,10 @@ var userSchema = new Schema({
   displayName: String,
   avatar: String,
   admin: { type: Boolean, default: false },
-  trail:{
+  trails:[{
     type: Schema.Types.ObjectId,
-    ref: 'Trail'
-  }
+    ref: 'Trails'
+  }]
 });
 
 userSchema.pre('save', function(next) {

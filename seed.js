@@ -19,7 +19,7 @@ var user_list = [
 var trail_list = [
   {
     trailName: "Batteries to Bluffs Trail",
-    image: "http://i.imgur.com/HfitIlj.jpg",
+    image: "https://i.imgur.com/HfitIlj.jpg",
     address: "Battery to Bluffs Trail, San Francisco, CA",
     description: "This short trail provides a great way to see the bluffs near the Presidio and offers views of the Golden Gate Bridge and Marin that are hard to beat.",
     dogFriendly: true,
@@ -31,7 +31,7 @@ var trail_list = [
   },
   {
     trailName: "Stinson Beach to Mt. Tamalpais",
-    image: "http://i.imgur.com/J4sQLxF.jpg",
+    image: "https://i.imgur.com/J4sQLxF.jpg",
     address: "Stinson Beach Trail, Marin, CA",
     description: "This short trail provides a great way to see the bluffs near the Presidio and offers views of the Golden Gate Bridge and Marin that are hard to beat.",
     dogFriendly: true,
@@ -43,7 +43,7 @@ var trail_list = [
   },
   {
     trailName: "Mount Diablo's Grand Loop",
-    image: "http://i.imgur.com/5IiZpxP.jpg",
+    image: "https://i.imgur.com/5IiZpxP.jpg",
     address: "Mt Diablo, California 94598",
     description: "The Grand Loop offers a bird's-eye view of the Bay Area, and sometimes glimpses far beyond, of the Farallon Islands, Mount Lassen, the Sierra Nevada, and the Santa Cruz Mountains. It's also a a hotspot for wildflowers in the spring.",
     dogFriendly: false,

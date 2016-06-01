@@ -24,7 +24,7 @@ angular
   .service('UserService', UserService)
   .config(configRoutes)
 
-  //
+//   //
 //   function MainController() {
 //     // var vm = this;
 //     // console.log('hi im main controller');

@@ -11,7 +11,7 @@
             </li>
             <li>
               <!--  -->
-              <div class="input-field col s12">
+              <!-- <div class="input-field col s12">
                 <select class="" material-select multiple watch>
                   <option value="" disabled selected>Trail Length</option>
                   <option value="1">0 - 2 Miles</option>
@@ -19,11 +19,11 @@
                   <option value="3">6 + Miles</option>
                 </select>
                 <label>Trail Length</label>
-              </div>
+              </div> -->
             </li>
             <!-- === TRAILHEAD SEARCH FIELD === -->
             <li class="search-trailhead">
-              <div class="search-wrapper card focused hoverable">
+              <div class="search-wrapper card focused">
                 <input ng-model="search.trailName" placeholder="Trailhead">
                 <i class="material-icons">search</i>
                 <div class="search-results"></div>
@@ -31,7 +31,7 @@
             </li>
             <!-- < ==== LOCATION SEARCH FIELD === -->
             <li class="search-location">
-              <div class="search-wrapper card focused hoverable">
+              <div class="search-wrapper card focused">
                 <input ng-model="search.address" placeholder="Location">
                 <i class="material-icons">search</i>
                 <div class="search-results"></div>
@@ -52,20 +52,45 @@
                   <div class="card-image">
                     <img class="responsive-img" src="{{trail.image}}">
                     <a ng-href="/trails/{{trail._id}}"><span class="card-title">{{trail.trailName}}</span></a>
-
                   </div>
-                  <div  class="col s10 offset-s1">
-                    <strong>Trail Info</strong><br>
+                  <br>
+
+                  <div class="row">
+                    <div class="col s12">
+                  <div  class="col s4">
                     <a ng-hide="favorite" ng-click="trailsIndexCtrl.favorite(trail._id); favorite = true" class="btn waves-effect waves-light blue left">Like</a>
                     <a ng-show="favorite" ng-click="trailsIndexCtrl.favorite(trail._id); favorite = false" class="btn waves-effect waves-light yellow left">Liked</a>
                   </div>
-                    <strong>Trail Info</strong>
+                  <div class="col s4">
+                    <p ng-if="!trail.dogFriendly.false">{{trail.dogFriendly}}  {{trail.trailLength}}miles</p>
+                  </div>
+                  <div class="col s4">
+                    <p>{{trail.trailSurface}} {{trail.difficulty}}</p>
+                  </div>
+                </div>
 
-                    <p ng-if="!trail.dogFriendly.false">{{trail.dogFriendly}}</p>
-                      <p> -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
-                    <hr>
-                    <strong>Description</strong>
-                    <p class="flow-text">{{trail.description}}{{trail.address}}</p>
+              </div>
+              <div class="row">
+                <div class="col s10">
+                  <ul>
+                    <li>
+                      <strong>Address</strong><br>
+
+                      {{trail.address}}
+                    </li>
+                    <br>
+                    <li>
+                      <strong>Description</strong><br>
+                      {{trail.description}}
+                    </li>
+                  </ul>
+                    <br>
+                </div>
+              </div>
+
+
+
+
 
                   </div>
                 </div>

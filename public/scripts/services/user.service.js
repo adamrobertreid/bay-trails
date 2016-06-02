@@ -17,6 +17,9 @@ function UserService($http, $q, $auth){
   self.updateProfile = updateProfile;
   self.login = login;
   self.logout = logout;
+  self.putFavCurrentUser = putFavCurrentUser;
+  self.getProfile = getProfile;
+
 
   //// UserService Methods
 
@@ -55,6 +58,45 @@ function UserService($http, $q, $auth){
         .then(
           function (response) {
             $auth.setToken(response.data.token); // set token (https://github.com/sahat/satellizer#authsettokentoken)
+            setCurrentUser();
+          },
+
+          function onError(error) {
+            console.error(error);
+          }
+        )
+
+    );
+  }
+
+  function putFavCurrentUser(trailId, isLiked) {
+    return (
+      $http
+        .put('/api/me/trails/'+ trailId, isLiked)
+        .then(
+          function (response) {
+            $auth.setToken(response.data.token); // set token (https://github.com/sahat/satellizer#authsettokentoken)
+            setCurrentUser();
+          },
+
+          function onError(error) {
+            console.error(error);
+          }
+        )
+
+    );
+  }
+
+  function getProfile() {
+    console.log("this is fav trail get");
+    return (
+      $http
+        .get('/api/me')
+        .then(
+          function (response) {
+            $auth.setToken(response.data.token); // set token (https://github.com/sahat/satellizer#authsettokentoken)
+            console.log('get profile', response);
+            self.profile = response.data;
             setCurrentUser();
           },
 

@@ -5,8 +5,6 @@
 <hr>
 <p><strong>Username:</strong> {{main.currentUser.displayName}}</p>
 <p><strong>Email:</strong> {{main.currentUser.email}}</p>
-<p><strong>Joined:</strong> {{main.currentUser.created}}</p>
-
 
 <hr>
 <a class="btn waves-effect waves-light" href="/trails/new" ng-show="main.currentUser.isLoggedIn()">Submit New Trail</a>
@@ -22,4 +20,43 @@
   <input type="submit" value="Save Profile" class="btn btn-block btn-info">
 </form>
   </div>
-</div>
+  <br>
+  <br>
+  <br>
+  <h2>Your Favorite trails</h2>
+  <hr>
+    <div class="container">
+      <div class="scroll-image col s12 m7 l9">
+        <p ng-if="!profileCtrl.trails.length">No trails yet.</p>
+          <div ng-if="profileCtrl.trails.length">
+            <div ng-repeat="trail in profileCtrl.trails | filter: search:strict">
+              <div class="row">
+                <div class="col s12">
+                  <div class="card image hoverable">
+                    <div class="card-image">
+                      <img class="responsive-img" src="{{trail.image}}">
+                      <a ng-href="/trails/{{trail._id}}"><span class="card-title">{{trail.trailName}}</span></a>
+
+                    </div>
+                    <div  class="col s10 offset-s1">
+                      <strong>Trail Info</strong><br>
+
+                    </div>
+                    
+
+                      <p ng-if="!trail.dogFriendly.false">{{trail.dogFriendly}}</p>
+                        <p> -- {{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
+                      <hr>
+                      <strong>Description</strong>
+                      <p class="flow-text">{{trail.description}}{{trail.address}}</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+    </div>

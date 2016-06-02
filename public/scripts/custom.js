@@ -5,6 +5,7 @@ $(document).ready(function() {
 // landing page header
 $('.parallax').parallax();
 
+
 // Initialize collapse button
 $(".button-collapse").sideNav();
 

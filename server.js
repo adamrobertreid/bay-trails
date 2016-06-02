@@ -36,7 +36,7 @@ app.get('/api/me', auth.ensureAuthenticated, usersCtrl.showCurrentUser);
 app.put('/api/me', auth.ensureAuthenticated, usersCtrl.updateCurrentUser);
 
 //Adding favorite trail to users profile
-// app.put('/api/me/trails/:id', auth.ensureAuthenticated, usersCtrl.putCurrentUser);
+app.put('/api/me/trails/:id', auth.ensureAuthenticated, usersCtrl.putFavCurrentUser);
 
 //JSON API Endpoints ======================================
 
@@ -59,7 +59,7 @@ app.get(['/', '/signup', '/login', '/logout', '/admin', '/profile', '/trails*'],
 // start app ===============================================
 // set our port
 var port = process.env.PORT || 3000;
-// startup our app at http://localhost:4000
+// startup our app at https://localhost:4000
 app.listen(port);
 // shoutout to the user
-console.log('Magic happens on http://localhost:' + port);
+console.log('Magic happens on https://localhost:' + port);

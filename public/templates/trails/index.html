@@ -45,7 +45,7 @@
     <div class="scroll-image col s12 m7 l9">
       <p ng-if="!trailsIndexCtrl.trails.length">No trails yet.</p>
         <div ng-if="trailsIndexCtrl.trails.length">
-          <div ng-repeat="trail in trailsIndexCtrl.trails | filter: search:strict">
+          <div ng-repeat="trail in trailsIndexCtrl.trails | filter: search:strict" ng-hide="trail.trailPending == false">
             <div class="row">
               <div class="col s12">
                 <div class="card image hoverable">
@@ -53,7 +53,8 @@
                     <img class="responsive-img" src="{{trail.image}}">
                     <a ng-href="/trails/{{trail._id}}"><span class="card-title">{{trail.trailName}}</span></a>
                   </div>
-                  <br>
+
+                  <div class="card-content">
 
                   <div class="row">
                     <div class="col s12">
@@ -62,7 +63,10 @@
                     <a ng-show="favorite" ng-click="trailsIndexCtrl.favorite(trail._id); favorite = false" class="btn waves-effect waves-light yellow left">Liked</a>
                   </div>
                   <div class="col s4">
-                    <p ng-if="!trail.dogFriendly.false">{{trail.dogFriendly}}  {{trail.trailLength}}miles</p>
+                    <p ng-hide="!trail.dogFriendly == true"><i class="fa fa-paw" style="font-size:20px;"></i> Dogs Allowed </p>
+                    <p ng-hide="trail.dogFriendly == true">No Dogs</p>
+
+                    {{trail.trailLength}} miles
                   </div>
                   <div class="col s4">
                     <p>{{trail.trailSurface}} {{trail.difficulty}}</p>
@@ -70,18 +74,19 @@
                 </div>
 
               </div>
-              <div class="row">
-                <div class="col s10">
+                <div class="col s12">
                   <ul>
                     <li>
                       <strong>Address</strong><br>
 
                       {{trail.address}}
+                      <hr>
+
                     </li>
                     <br>
                     <li>
-                      <strong>Description</strong><br>
-                      {{trail.description}}
+                    <h6><strong>Description</strong> </h6>  <br>
+                      <p>{{trail.description}}</p>
                     </li>
                   </ul>
                     <br>

@@ -1,5 +1,5 @@
-TrailsIndexController.$inject = ["$http"]; // minification protection
-function TrailsIndexController ($http) {
+TrailsIndexController.$inject = ["$http", "UserService"]; // minification protection
+function TrailsIndexController ($http, UserService) {
   var vm = this;
   vm.trails = [];
 
@@ -14,4 +14,12 @@ function TrailsIndexController ($http) {
         vm.trails = response.data;
       });
   }
+
+  vm.favorite = function(trailId){
+    UserService
+    .putFavCurrentUser(trailId, {isLiked:true})
+    .then(function onSuccess(){
+    });
+
+  };
 }

@@ -53,9 +53,28 @@ function updateCurrentUser(req, res) {
 }
 
 function showCurrentUser (req, res) {
+  User.findById(req.user_id)
+    .populate('trails')
+    .exec(function (err, user) {
+      res.send(user);
+  });
+}
+
+function putFavCurrentUser (req, res){
   User.findById(req.user_id, function (err, user) {
-    res.send(user);
-    // res.send(user.populate('posts'));
+    if (!user) {
+      return res.status(400).send({ message: 'User not found.' });
+    }
+    // if (!user.trails.includes(req.params)){
+        user.trails.push(req.params.id);
+
+    // }
+    console.log('the trail id',req.params);
+    console.log("user liked this id", user.trails);
+    user.save(function(err, result){
+      console.log('this is whats in result', result);
+      res.send({ token: auth.createJWT(result) });
+    });
   });
 }
 
@@ -63,5 +82,6 @@ module.exports = {
   signup: signup,
   login: login,
   updateCurrentUser: updateCurrentUser,
-  showCurrentUser: showCurrentUser
+  showCurrentUser: showCurrentUser,
+  putFavCurrentUser: putFavCurrentUser
 };

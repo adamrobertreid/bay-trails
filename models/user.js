@@ -12,7 +12,7 @@ var userSchema = new Schema({
   admin: { type: Boolean, default: false },
   trails:[{
     type: Schema.Types.ObjectId,
-    ref: 'Trails'
+    ref: 'Trail'
   }]
 });
 

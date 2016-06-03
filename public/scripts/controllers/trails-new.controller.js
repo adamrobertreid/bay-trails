@@ -12,7 +12,7 @@ function TrailsNewController ($location, $http) {
       .then(onCreateSuccess, onCreateError);
 
     function onCreateSuccess(response){
-      $location.path('/trails/' + response.data._id);
+      $location.path('/trails');
     }
 
     function onCreateError(response){
@@ -20,3 +20,4 @@ function TrailsNewController ($location, $http) {
     }
   }
 }
+ // + response.data._id

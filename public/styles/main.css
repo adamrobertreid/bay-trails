@@ -19,24 +19,7 @@
 
 
 /*================  Search bar - search input   =======================*/
-/*li.search-trailhead{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 60px;
-  margin-top: 1px;
-  padding: 1px 0 0 0;
-  z-index: 2;
-}
-li.search-location{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 120px;
-  margin-top: 1px;
-  padding: 1px 0 0 0;
-  z-index: 2;
-}*/
+
 .search-wrapper i.material-icons {
   position: absolute;
   top: 10px;
@@ -69,11 +52,7 @@ li.search-location{
 }
 
 /*============   Admin Card styling ====================================*/
-/*#admin-card{
-  padding: 20px;
-  border-radius: 0 0 2px 2px;
-  height:100px;
-}*/
+
 #admin-img {
   height: 300px;
 }
@@ -85,16 +64,10 @@ li.search-location{
     max-height: 300px;
     overflow: hidden;
 }
-/*.scroll-image{
-  height: 700px;
-  overflow: auto;
 
-}*/
 #landing-page-text {
    position: absolute;
    top: 200px;
-   /*left: 50%;
-   right: 50%;*/
    width: 100%;
 }
 #landing-page-text {

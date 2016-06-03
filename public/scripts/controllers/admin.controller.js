@@ -5,12 +5,12 @@ function AdminController ($location, $http, $routeParams) {
   vm.update = update;
   vm.destroy = destroy;
   vm.create = create;
-  vm.trail = {}; // form data
+  vm.trail = {}; 
 
   var id = $routeParams._id;
-  get(); // fetch one trail (show)
+  get();
 
-  ////
+
 
   function update(trail) {
     $http

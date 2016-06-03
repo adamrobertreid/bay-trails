@@ -9,7 +9,7 @@ function UserService($http, $q, $auth){
     admin: true
   };
 
-  self.text = "hell world";
+
 
   self.user = angular.extend({}, empty_user, {
     isLoggedIn: isLoggedIn

@@ -12,9 +12,7 @@
               <img id="logo-container" ng-src="http://i.imgur.com/Sbw3nem.png" class="brand-logo">
               <h5 class="center-align"><strong> bay trails</strong></h5>
             </li>
-            <li>
-
-            </li>
+            <hr>
             <!-- === TRAILHEAD SEARCH FIELD === -->
             <li class="search-trailhead">
               <div class="search-wrapper card focused">
@@ -30,6 +28,24 @@
                 <i class="material-icons">search</i>
                 <div class="search-results"></div>
               </div>
+            </li>
+            <li>
+              <!-- <form action="# col s10 offset-1">
+                <p>
+                  <input type="checkbox" class="filled-in" id="filled-in-box1" checked="checked" />
+                  <label for="filled-in-box1">Dogs</label>
+                  <input type="checkbox" class="filled-in" id="filled-in-box2" checked="checked" />
+                  <label for="filled-in-box2">No Dogs</label>
+                </p>
+                <p>
+                  <input type="checkbox" class="filled-in" id="filled-in-box3" checked="checked" />
+                  <label for="filled-in-box3">Paved</label>
+                </p>
+                <p>
+                  <input type="checkbox" class="filled-in" id="filled-in-box4" checked="checked" />
+                  <label for="filled-in-box4">Unpaved</label>
+                </p> -->
+              </form>
             </li>
           </ul>
         </div>
@@ -54,7 +70,7 @@
                           {{trail.trailLength}} miles
                         </div>
                         <div class="col s3">
-                          <p ng-hide="!trail.dogFriendly == true"><i class="fa fa-paw" style="font-size:20px;"></i> Dogs Allowed </p>
+                          <p ng-hide="!trail.dogFriendly == true">Dogs Allowed </p>
                           <p ng-hide="trail.dogFriendly == true">No Dogs</p>
                         </div>
                         <div class="col s3">

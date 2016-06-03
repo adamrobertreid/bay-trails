@@ -6,10 +6,7 @@
         <h1 class="valign">Submit New Trail</h1>
       </div>
       <hr>
-
-
       <form ng-submit="trailsNewCtrl.create()">
-
           <div class="col m6 file-field input-field">
             <input type="text" placeholder="Enter trail name" ng-model="trailsNewCtrl.trail.trailName">
             <input type="text" placeholder="Enter trail-head address" ng-model="trailsNewCtrl.trail.address">
@@ -17,14 +14,10 @@
             <input type="text" placeholder="Trail surface" ng-model="trailsNewCtrl.trail.trailSurface">
           </div>
           <div class="col m6 file-field input-field">
-            <!-- <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly"> -->
-            <label>
-              <input type="radio" ng-model="trailsNewCtrl.trail.dogFriendly" ng-value="false">
-              No Dogs
-            </label><br/>
+            <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly">
             <input type="text" placeholder="Difficulty" ng-model="trailsNewCtrl.trail.difficulty">
+            <textarea type="textarea" placeholder="Trail Description" ng-model="trailsNewCtrl.trail.description" class="materialize-textarea"></textarea>
             <div class=" file-field input-field">
-              <!-- <span>File</span> -->
               <input
                     uploadcare-widget
                     ng-model="trailsNewCtrl.trail.image"
@@ -34,27 +27,27 @@
                     data-preview-step="true"
                     data-clearable="true"
                     data-multiple="false"
-                    data-crop="400:200"
+                    data-crop=""
                     on-upload-complete="onUCUploadComplete(info)"
                     on-widget-ready="onUCWidgetReady(widget)"
                     />
-                    <input type="submit" value="Create Trail" data-target="#modal1" class="btn waves-effect waves-light right-align">
+                    <br>
+                    <br>
+              <input type="submit" value="Create Trail" data-target="#modal1" class="btn waves-effect waves-light right-align">
             </div>
             <br>
-
-            </div>
-
           </div>
+        </div>
       </form>
     </div>
   </div>
-</div>
+
 <!-- Modal Trigger -->
-<div class="col">
+<!-- <div class="col">
     <a class='btn' href='#modal1' modal>Show Modal</a>
-</div>
+</div> -->
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
+<!-- <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Hey, hiker </h4>
       <p>We really appreciate your trail submit to bay trails,<br> give us a couple of days and your trail will be approved
@@ -64,4 +57,4 @@
       <a href="/profile" class=" modal-action modal-close waves-effect waves-green btn-flat">Profile</a>
       <a href="/trials" class=" modal-action modal-close waves-effect waves-green btn-flat">Main Page</a>
     </div>
-</div>
+</div> -->

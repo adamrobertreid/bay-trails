@@ -4,40 +4,49 @@
     <div class="col s12">
       <div class="valign-wrapper">
         <h1 class="valign">Admin Console</h1>
+        <hr>
       </div>
+      <h4>Upload a new trail</h4>
       <hr>
-
-
-      <form ng-submit="adminCtrl.create()">
-
-          <div class="col m6 file-field input-field" >
-            <input type="text" placeholder="Enter trail name" ng-model="adminCtrl.trail.trailName">
-            <input type="text" placeholder="Enter trail-head address" ng-model="adminCtrl.trail.address">
-            <input type="text" placeholder="Trail length" ng-model="adminCtrl.trail.trailLength">
-            <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
-            <input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
-            <input type="text" placeholder="Trail surface" ng-model="adminCtrl.trail.trailSurface">
+      <form ng-submit="trailsNewCtrl.create()">
+          <div class="col m6 file-field input-field">
+            <input type="text" placeholder="Enter trail name" ng-model="trailsNewCtrl.trail.trailName">
+            <input type="text" placeholder="Enter trail-head address" ng-model="trailsNewCtrl.trail.address">
+            <input type="text" placeholder="Trail length" ng-model="trailsNewCtrl.trail.trailLength">
+            <input type="text" placeholder="Trail surface" ng-model="trailsNewCtrl.trail.trailSurface">
           </div>
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Dogs friendly" ng-model="adminCtrl.trail.dogFriendly">
-            <input type="text" placeholder="Difficulty" ng-model="adminCtrl.trail.difficulty">
-            <div class="btn file-field input-field">
-              <span>File</span>
-              <input type="file">
+            <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly">
+            <input type="text" placeholder="Difficulty" ng-model="trailsNewCtrl.trail.difficulty">
+            <textarea type="textarea" placeholder="Trail Description" ng-model="trailsNewCtrl.trail.description" class="materialize-textarea"></textarea>
+            <div class=" file-field input-field">
+              <input
+                    uploadcare-widget
+                    ng-model="trailsNewCtrl.trail.image"
+                    data-public-key="34e7159f3dca4612894b"
+                    data-tabs="file facebook instagram flickr"
+                    data-images-only="true"
+                    data-preview-step="true"
+                    data-clearable="true"
+                    data-multiple="false"
+                    data-crop=" "
+                    on-upload-complete="onUCUploadComplete(info)"
+                    on-widget-ready="onUCWidgetReady(widget)"
+                    />
+                    <br>
+                    <br>
+              <input type="submit" value="Create Trail" data-target="#modal1" class="btn waves-effect waves-light right-align">
             </div>
-            <div class="file-path-wrapper">
-              <input type="text" class="file-path validate">
-            </div>
-            <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
+            <br>
           </div>
+        </div>
       </form>
-
     </div>
-  </div>
+
 
     <!-- SEARCH AND EDIT TRAILS IN ADMIN -->
     <div class="col s12 m6 l4">
-      <input type="text" class="form-control" ng-model="searchText" placeholder="Search Albums">
+      <input type="text" class="form-control" ng-model="searchText" placeholder="Search Trails">
          <div ng-repeat="trail in adminCtrl.trails | orderBy: 'trailName' | filter: searchText" class="row">
            <div class="row">
              <div class="card hoverable col s12">

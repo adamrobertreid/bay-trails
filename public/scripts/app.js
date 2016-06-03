@@ -5,8 +5,8 @@ angular
   .module('project_03', [
     'ngRoute',
     'satellizer',
-    'ui.materialize'
-    // 'ng-uploadcare'
+    'ui.materialize',
+    'ng-uploadcare'
   ])
 
 

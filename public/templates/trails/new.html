@@ -38,7 +38,7 @@
                     on-upload-complete="onUCUploadComplete(info)"
                     on-widget-ready="onUCWidgetReady(widget)"
                     />
-                    <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
+                    <input type="submit" value="Create Trail" data-target="#modal1" class="btn waves-effect waves-light right-align">
             </div>
             <br>
 
@@ -48,4 +48,20 @@
       </form>
     </div>
   </div>
+</div>
+<!-- Modal Trigger -->
+<div class="col">
+    <a class='btn' href='#modal1' modal>Show Modal</a>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Hey, hiker </h4>
+      <p>We really appreciate your trail submit to bay trails,<br> give us a couple of days and your trail will be approved
+      <br>for our main site!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="/profile" class=" modal-action modal-close waves-effect waves-green btn-flat">Profile</a>
+      <a href="/trials" class=" modal-action modal-close waves-effect waves-green btn-flat">Main Page</a>
+    </div>
 </div>

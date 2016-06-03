@@ -46,6 +46,7 @@ function updateCurrentUser(req, res) {
     user.displayName = req.body.displayName || user.displayName;
     user.username = req.body.username || user.username;
     user.email = req.body.email || user.email;
+    user.avatar = req.body.avatar || user.avatar;
     user.save(function(err, result) {
       res.send({ token: auth.createJWT(result) });
     });
@@ -66,9 +67,10 @@ function putFavCurrentUser (req, res){
       return res.status(400).send({ message: 'User not found.' });
     }
     // if (!user.trails.includes(req.params)){
-        user.trails.push(req.params.id);
-
-    // }
+    // if (user.trails.indexOf(req.params) == -1){
+      console.log('check like', req.params);
+      user.trails.push(req.params.id);
+  //  }
     console.log('the trail id',req.params);
     console.log("user liked this id", user.trails);
     user.save(function(err, result){

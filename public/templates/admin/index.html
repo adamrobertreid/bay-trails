@@ -8,28 +8,28 @@
       </div>
       <h4>Upload a new trail</h4>
       <hr>
-      <form ng-submit="trailsNewCtrl.create()">
+      <form ng-submit="adminLoginCtrl.create()">
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Enter trail name" ng-model="trailsNewCtrl.trail.trailName">
-            <input type="text" placeholder="Enter trail-head address" ng-model="trailsNewCtrl.trail.address">
-            <input type="text" placeholder="Trail length" ng-model="trailsNewCtrl.trail.trailLength">
-            <input type="text" placeholder="Trail surface" ng-model="trailsNewCtrl.trail.trailSurface">
+            <input type="text" placeholder="Enter trail name" ng-model="adminLoginCtrl.trail.trailName">
+            <input type="text" placeholder="Enter trail-head address" ng-model="adminLoginCtrl.trail.address">
+            <input type="text" placeholder="Trail length" ng-model="adminLoginCtrl.trail.trailLength">
+            <input type="text" placeholder="Trail surface" ng-model="adminLoginCtrl.trail.trailSurface">
           </div>
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly">
-            <input type="text" placeholder="Difficulty" ng-model="trailsNewCtrl.trail.difficulty">
-            <textarea type="textarea" placeholder="Trail Description" ng-model="trailsNewCtrl.trail.description" class="materialize-textarea"></textarea>
-            <div class=" file-field input-field">
+            <input type="text" placeholder="Dogs friendly" ng-model="adminLoginCtrl.trail.dogFriendly">
+            <input type="text" placeholder="Difficulty" ng-model="adminLoginCtrl.trail.difficulty">
+            <textarea type="textarea" placeholder="Trail Description" ng-model="adminLoginCtrl.trail.description" class="materialize-textarea"></textarea>
+            <div class="file-field input-field">
               <input
                     uploadcare-widget
-                    ng-model="trailsNewCtrl.trail.image"
+                    ng-model="adminLoginCtrl.trail.image"
                     data-public-key="34e7159f3dca4612894b"
                     data-tabs="file facebook instagram flickr"
                     data-images-only="true"
                     data-preview-step="true"
                     data-clearable="true"
                     data-multiple="false"
-                    data-crop=" "
+                    data-crop="400:300"
                     on-upload-complete="onUCUploadComplete(info)"
                     on-widget-ready="onUCWidgetReady(widget)"
                     />

@@ -4,24 +4,56 @@
     <hr>
   </div>
   <div class="scroll-image col s12 m7 l10">
-
     <div class="row">
       <div class="col s12">
         <div class="card image hoverable">
           <div class="card-image">
             <img class="responsive-img" src="{{trailsShowCtrl.trail.image}}">
-            <span class="card-title"><p class="flow-text">{{trailsShowCtrl.trail.trailName}}</p></span>
           </div>
-          <div  class="card-panel ">
-            <strong>Trail Info</strong>
-            <p ng-if="!trail.dogFriendly.false">{{trailsShowCtrl.trail.dogFriendly}}</p>
-              <p> -- {{trailsShowCtrl.trail.trailLength}} miles {{trailsShowCtrl.trail.trailSurface}} {{trailsShowCtrl.trail.difficulty}}</p>
-            <hr>
-            <strong>Description</strong>
-            <p>{{trailsShowCtrl.trail.description}}</p>
-
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12">
+                <div class="col s3">
+                  {{trailsShowCtrl.trail.trailLength}} miles
+                </div>
+                <div class="col s3">
+                  <p ng-hide="!trail.dogFriendly == true">Dogs Allowed </p>
+                  <p ng-hide="trail.dogFriendly == true">No Dogs</p>
+                </div>
+                <div class="col s3">
+                  <p>{{trailsShowCtrl.trail.trailSurface}}</p>
+                </div>
+                <div class="col s3">
+                  <p>{{trailsShowCtrl.trail.difficulty}}</p>
+                </div>
+              </div>
+              <div class="col s12">
+                <ul>
+                  <hr>
+                  <li>
+                    <strong>Address</strong><br>
+                    <p>{{trailsShowCtrl.trail.address}}</p>
+                  </li>
+                  <hr>
+                  <li>
+                    <h6><strong>Description</strong></h6><br>
+                    <p>{{trailsShowCtrl.trail.description}}</p>
+                  </li>
+                  <br><hr>
+                  <li>
+                    <div  class="col s3">
+                      <a ng-hide="favorite" ng-click="trailsIndexCtrl.favorite(trail._id); favorite = true" class="btn waves-effect waves-light blue left">Like</a>
+                      <a ng-show="favorite" ng-click="trailsIndexCtrl.favorite(trail._id); favorite = false" class="btn waves-effect waves-light yellow left">Liked</a>
+                    </div>
+                  </li>
+                </ul>
+                <br>
+              </div>
+            </div>
           </div>
         </div>
+        <a ng-show="main.currentUser.isLoggedIn()" href="/views/index.html" class="brand-logo">Bay Trails</a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
     </div>
   </div>

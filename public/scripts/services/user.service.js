@@ -6,10 +6,15 @@ function UserService($http, $q, $auth){
     user_id: null,
     displayName: null,
     email: null,
+    admin: true
   };
+
+  self.text = "hell world";
 
   self.user = angular.extend({}, empty_user, {
     isLoggedIn: isLoggedIn
+
+
   });
 
   self.currentUser = setCurrentUser;
@@ -140,5 +145,8 @@ function UserService($http, $q, $auth){
     return !!self.user.user_id;
   }
 
+self.isAdmin = function(){
+  return self.user.admin;
+};
 
 }

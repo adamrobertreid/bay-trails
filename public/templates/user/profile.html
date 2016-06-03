@@ -42,18 +42,41 @@
                       <a ng-href="/trails/{{trail._id}}"><span class="card-title">{{trail.trailName}}</span></a>
 
                     </div>
-                    <div  class="col s10 offset-1">
-
-
-                      <p ng-if="!trail.dogFriendly.false">{{trail.dogFriendly}}</p>
-                      <p>{{trail.trailLength}} miles {{trail.trailSurface}} {{trail.difficulty}}</p>
-                      <hr>
-                      <strong>Description</strong>
-                      <p>{{trail.description}}{{trail.address}}</p>
+                    <div class="card-content">
+                      <div class="row">
+                        <div class="col s12">
+                          <div class="col s3">
+                            {{trail.trailLength}} miles
+                          </div>
+                          <div class="col s3">
+                            <p ng-hide="!trail.dogFriendly == true">Dogs Allowed </p>
+                            <p ng-hide="trail.dogFriendly == true">No Dogs</p>
+                          </div>
+                          <div class="col s3">
+                            <p>{{trail.trailSurface}}</p>
+                          </div>
+                          <div class="col s3">
+                            <p>{{trail.difficulty}}</p>
+                          </div>
+                        </div>
+                        <div class="col s12">
+                          <ul>
+                            <hr>
+                            <li>
+                              <strong>Address</strong><br>
+                              <p>{{trail.address}}</p>
+                            </li>
+                            <hr>
+                            <li>
+                              <h6><strong>Description</strong></h6><br>
+                              <p>{{trail.description}}</p>
+                            </li>
+                        
+                          </ul>
+                          <br>
+                        </div>
+                      </div>
                     </div>
-
-
-
                     </div>
                   </div>
                 </div>

@@ -14,7 +14,7 @@
   }
   .parallax-container {
 
-      height: 700px;
+      height: 100vh;
     }
 
 
@@ -99,11 +99,12 @@ li.search-location{
 }
 #landing-page-text {
    color: white;
-   font: bold 70px/45px Helvetica, Sans-Serif;
+   font: bold 80px/45px Helvetica, Sans-Serif;
    letter-spacing: -1px;
 
    padding: 10px;
 }
+
 #logo-container{
   width: 50px;
   padding-top: 15px;

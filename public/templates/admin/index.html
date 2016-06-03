@@ -8,21 +8,21 @@
       </div>
       <h4>Upload a new trail</h4>
       <hr>
-      <form ng-submit="adminLoginCtrl.create()">
+      <form ng-submit="adminCtrl.create()">
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Enter trail name" ng-model="adminLoginCtrl.trail.trailName">
-            <input type="text" placeholder="Enter trail-head address" ng-model="adminLoginCtrl.trail.address">
-            <input type="text" placeholder="Trail length" ng-model="adminLoginCtrl.trail.trailLength">
-            <input type="text" placeholder="Trail surface" ng-model="adminLoginCtrl.trail.trailSurface">
+            <input type="text" placeholder="Enter trail name" ng-model="adminCtrl.trail.trailName">
+            <input type="text" placeholder="Enter trail-head address" ng-model="adminCtrl.trail.address">
+            <input type="text" placeholder="Trail length" ng-model="adminCtrl.trail.trailLength">
+            <input type="text" placeholder="Trail surface" ng-model="adminCtrl.trail.trailSurface">
           </div>
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Dogs friendly" ng-model="adminLoginCtrl.trail.dogFriendly">
-            <input type="text" placeholder="Difficulty" ng-model="adminLoginCtrl.trail.difficulty">
-            <textarea type="textarea" placeholder="Trail Description" ng-model="adminLoginCtrl.trail.description" class="materialize-textarea"></textarea>
+            <input type="text" placeholder="Dogs friendly" ng-model="adminCtrl.trail.dogFriendly">
+            <input type="text" placeholder="Difficulty" ng-model="adminCtrl.trail.difficulty">
+            <textarea type="textarea" placeholder="Trail Description" ng-model="adminCtrl.trail.description" class="materialize-textarea"></textarea>
             <div class="file-field input-field">
               <input
                     uploadcare-widget
-                    ng-model="adminLoginCtrl.trail.image"
+                    ng-model="adminCtrl.trail.image"
                     data-public-key="34e7159f3dca4612894b"
                     data-tabs="file facebook instagram flickr"
                     data-images-only="true"
@@ -35,7 +35,7 @@
                     />
                     <br>
                     <br>
-              <input type="submit" value="Create Trail" data-target="#modal1" class="btn waves-effect waves-light right-align">
+              <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
             </div>
             <br>
           </div>

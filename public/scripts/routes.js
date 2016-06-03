@@ -84,7 +84,9 @@ function configRoutes($routeProvider, $locationProvider) {
       controller: 'AdminController',
       controllerAs: 'adminCtrl',
       resolve: {
-        loginRequired: loginRequired
+        UserService: 'UserService',
+        loginRequired: loginRequired,
+        adminRequired: adminRequired
       }
     })
     .when('/admin/login', {
@@ -105,6 +107,13 @@ function configRoutes($routeProvider, $locationProvider) {
         $location.path('/');
       }
     }
+
+    function adminRequired($location, $auth, UserService){
+      if (!UserService.isAdmin()){
+        $location.path('/');
+      }
+    }
+
 
 
     function loginRequired($location, $auth) {

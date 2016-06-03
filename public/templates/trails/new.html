@@ -17,34 +17,35 @@
             <input type="text" placeholder="Trail surface" ng-model="trailsNewCtrl.trail.trailSurface">
           </div>
           <div class="col m6 file-field input-field">
-            <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly">
+            <!-- <input type="text" placeholder="Dogs friendly" ng-model="trailsNewCtrl.trail.dogFriendly"> -->
+            <label>
+              <input type="radio" ng-model="trailsNewCtrl.trail.dogFriendly" ng-value="false">
+              No Dogs
+            </label><br/>
             <input type="text" placeholder="Difficulty" ng-model="trailsNewCtrl.trail.difficulty">
-            <div class="btn file-field input-field">
-              <span>File</span>
-              <input type="file">
+            <div class=" file-field input-field">
+              <!-- <span>File</span> -->
+              <input
+                    uploadcare-widget
+                    ng-model="trailsNewCtrl.trail.image"
+                    data-public-key="34e7159f3dca4612894b"
+                    data-tabs="file facebook instagram flickr"
+                    data-images-only="true"
+                    data-preview-step="true"
+                    data-clearable="true"
+                    data-multiple="false"
+                    data-crop="400:200"
+                    on-upload-complete="onUCUploadComplete(info)"
+                    on-widget-ready="onUCWidgetReady(widget)"
+                    />
+                    <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
             </div>
-            <div class="file-path-wrapper">
-              <input type="text" class="file-path validate">
+            <br>
+
             </div>
-            <!-- Modal Trigger & Trail Create Button -->
-            <input type="submit" value="Create Trail" class="btn waves-effect waves-light right-align">
+
           </div>
       </form>
-
     </div>
   </div>
-</div>
-href='#Modal' modal
-
-<!-- Modal Structure -->
-<div id="Modal" class="modal">
-    <div class="modal-content">
-        <h4>Hey, hiker </h4>
-        <p>We really appreciate your trail submit to bay trails,<br> give us a couple of days and your trail will be approved
-        <br>for our main site!</p>
-    </div>
-    <div class="modal-footer">
-        <a href="/profile" class=" modal-action modal-close waves-effect waves-green btn-flat">Profile</a>
-        <a href="/trials" class=" modal-action modal-close waves-effect waves-green btn-flat">Main Page</a>
-    </div>
 </div>

@@ -10,10 +10,12 @@
 
       <form ng-submit="adminCtrl.create()">
 
-          <div class="col m6 file-field input-field">
+          <div class="col m6 file-field input-field" >
             <input type="text" placeholder="Enter trail name" ng-model="adminCtrl.trail.trailName">
             <input type="text" placeholder="Enter trail-head address" ng-model="adminCtrl.trail.address">
             <input type="text" placeholder="Trail length" ng-model="adminCtrl.trail.trailLength">
+            <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+            <input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
             <input type="text" placeholder="Trail surface" ng-model="adminCtrl.trail.trailSurface">
           </div>
           <div class="col m6 file-field input-field">
@@ -53,43 +55,43 @@
                          <span ng-hide="editing">{{trail.trailName}}</span>
                          <input ng-show="editing" ng-model="trail.trailName" type="text" class="form-control input-md">
                        </li>
-                       <hr>
+
                        <li class="list-group-item">
                          <label class='inline-header'>Address: </label>
                          <span ng-hide="editing">{{trail.address}}</span>
                          <input ng-show="editing" ng-model="trail.address" type="text" class="form-control input-md">
                        </li>
-                       <hr>
+
                        <li class="list-group-item">
                          <label class='inline-header'>Description: </label>
                          <span ng-hide="editing">{{trail.description}}</span>
                          <input ng-show="editing" ng-model="trail.description" type="text" class="form-control input-md">
                        </li>
-                       <hr>
+
                        <li class="list-group-item">
                          <label class='inline-header'>Dog friendly: </label>
                          <span ng-hide="editing">{{trail.dogFriendly}}</span>
                          <input ng-show="editing" ng-model="trail.dogFriendly" type="text" class="form-control input-md">
                        </li>
-                       <hr>
+
                        <li class="list-group-item">
                          <label class='inline-header'>Trail Length: </label>
                          <span ng-hide="editing">{{trail.trailLength}}</span>
                          <input ng-show="editing" ng-model="trail.trailLength" type="text" class="form-control input-md">
                        </li>
-                       <hr>
+
                        <li class="list-group-item">
                          <label class='inline-header'>Difficulty: </label>
                          <span ng-hide="editing">{{trail.difficulty}}</span>
                          <input ng-show="editing" ng-model="trail.difficulty" type="text" class="form-control input-md">
                        </li>
-                       <hr>
+
                        <li class="list-group-item">
                          <label class='inline-header'>Trail Surface: </label>
                          <span ng-hide="editing">{{trail.trailSurface}}</span>
                          <input ng-show="editing" ng-model="trail.trailSurface" type="text" class="form-control input-md">
                        </li>
-                       <hr>
+
                        <li class="list-group-item">
                          <label class='inline-header'>Trail Pending Approval: </label>
                          <span ng-hide="editing">{{trail.trailPending}}</span>
@@ -99,9 +101,11 @@
                    </div>
 
                  <div class='col s12 m6 l4'>
-                     <button class='btn waves-effect waves-light' ng-click="adminCtrl.destroy(trail)">Delete Trail</button>
-                     <button class='btn waves-effect waves-light' ng-hide="editing" ng-click="editing = true">Edit Trail</button>
+                     <button class='btn waves-effect waves-light' ng-click="adminCtrl.destroy(trail)">Delete Trail</button><br><br>
+                     <button class='btn waves-effect waves-light' ng-hide="editing" ng-click="editing = true">Edit Trail</button><br>
                      <button class='btn waves-effect waves-light' ng-show="editing" ng-click="adminCtrl.update(trail); editing = false">Save Changes</button>
+                     <br>
+                     <br>
                  </div>
                </div>
              </div>

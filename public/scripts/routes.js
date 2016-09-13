@@ -1,7 +1,7 @@
 configRoutes.$inject = ["$routeProvider", "$locationProvider"]; // minification protection
 function configRoutes($routeProvider, $locationProvider) {
 
-  //this allows us to use routes without hash params!
+  //this allows us to use routes without hash params
   $locationProvider.html5Mode({
     enabled: true,
     requireBase: false

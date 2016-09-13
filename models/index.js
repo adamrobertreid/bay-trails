@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.connect( 'mongodb://localhost/project_03' ||
-                  process.env.MONGODB_URI ||
-                  process.env.MONGOHQ_URL
+                  process.env.MONGODB_URI
                   );
 
 module.exports = {

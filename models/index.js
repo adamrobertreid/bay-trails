@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
-mongoose.connect( process.env.MONGODB_URI ||
-                  'mongodb://localhost/project_03' );
+mongoose.connect( 'mongodb://localhost/project_03' ||
+                  process.env.MONGODB_URI ||
+                  process.env.MONGOHQ_URL
+                  );
 
 module.exports = {
-  User: require('./user'), Trail: require('./trail')
+  User: require('./user'),
+  Trail: require('./trail')
 };
